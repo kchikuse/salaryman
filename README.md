@@ -2,6 +2,8 @@
 
 - `java -jar bot-1.0-SNAPSHOT.war`
 
+- you can try the bot at `@chikuse_bot`
+
 ##
 
 - `wget http://maven.ibiblio.org/maven2/cglib/cglib-nodep/3.2.4/cglib-nodep-3.2.4.jar`
