@@ -157,7 +157,7 @@ enum Emoji {
 
     @Override
     String toString() {
-        def sb = new StringBuilder()
+        StringBuilder sb = new StringBuilder()
 
         if (firstChar != null) {
             sb.append(firstChar)

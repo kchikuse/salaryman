@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <logger name="com.github.tomakehurst.wiremock" level="WARN"/>
+    <logger name="wiremock.org" level="ERROR"/>
+    <logger name="WireMock" level="WARN"/>
+    <logger name="/" level="WARN"/>
+</configuration>

@@ -7,7 +7,14 @@
     <artifactId>bot</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>Chikuse's Useful Bot</name>
+    <name>salaryman</name>
+
+    <developers>
+        <developer>
+            <name>Knowledge Chikuse</name>
+            <email>kchikuse@gmail.com</email>
+        </developer>
+    </developers>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -83,6 +90,7 @@
             <scope>test</scope>
         </dependency>
         <!-- tests -->
+
     </dependencies>
 
     <build>

@@ -1,15 +1,11 @@
 package bot
 
 import com.github.tomakehurst.wiremock.WireMockServer
-import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.test.context.*
 import spock.lang.Specification
 
 import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.options
 import static com.github.tomakehurst.wiremock.client.WireMock.*
 
-@SpringBootTest
-@ActiveProfiles("tests")
 abstract class Spec extends Specification {
 
     static boolean setUpfinished = false

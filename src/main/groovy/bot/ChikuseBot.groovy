@@ -1,24 +1,28 @@
 package bot
 
 import bot.models.*
-import bot.actions.*
+import bot.services.*
 import groovy.util.logging.Log
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Scope
 import org.springframework.stereotype.Service
 import org.telegram.telegrambots.api.methods.send.*
 import org.telegram.telegrambots.api.objects.*
+import org.telegram.telegrambots.api.objects.replykeyboard.InlineKeyboardMarkup
+import org.telegram.telegrambots.api.objects.replykeyboard.buttons.InlineKeyboardButton
 import org.telegram.telegrambots.bots.TelegramLongPollingBot
-import javax.inject.Inject
 
-import static bot.common.Utils.*
-import static java.util.logging.Level.*
+import javax.inject.Inject
+import java.util.logging.Level
+
 import static org.springframework.beans.factory.config.ConfigurableBeanFactory.*
 
 @Log
 @Service
-@Scope(value = SCOPE_SINGLETON)
+@Scope(SCOPE_SINGLETON)
 class ChikuseBot extends TelegramLongPollingBot {
+
+    private long chatId
 
     @Value('${bot.token}')
     private String token
@@ -33,90 +37,89 @@ class ChikuseBot extends TelegramLongPollingBot {
     private Google google
 
     @Inject
-    private Database database
+    private Storage storage
 
     @Inject
-    private Quotable quotable
+    private Quotable quotes
 
     @Inject
-    private CommitStrip commit
-
-    @Inject
-    private Kosher kosher
+    private CommitStrip comic
 
     @Override
     void onUpdateReceived(Update update) {
         try {
-            if (update.hasMessage() && update.message.hasText()) {
 
-                Message msg = update.message
-                long chatId = msg.chatId
-                String text = msg.text.toUpperCase()
-
-                database.saveChat(chatId)
-
-                if (text == "/START" || text == 'HELP') {
-                    sendText(chatId, help(msg.chat.firstName))
-                    return
-                }
-
-                if (text.startsWith('#')) {
-                    sendText(chatId, bible.randomVerse())
-                    return
-                }
-
-                if (text.startsWith('??')) {
-                    sendPhoto(chatId, quotable.getRandomFact())
-                    return
-                }
-
-                if (text.startsWith('?')) {
-                    sendText( chatId, getRandomNumber() ? quotable.getRandomAdvice() : quotable.getRandomQuotation() )
-                    return
-                }
-
-                if (text.startsWith('$')) {
-                    String rands = google.convertDollarsToRands(text)
-                    sendText(chatId, rands)
-                    return
-                }
-
-                if (text.startsWith('R')) {
-                    String dollars = google.convertRandsToDollars(text)
-                    sendText(chatId, dollars)
-                    return
-                }
-
-                String analysis = kosher.check(text)
-                if(analysis != null) {
-                    sendText(chatId, analysis)
-                    return
-                }
-
-                sendPhoto(chatId, commit.getStrip())
+            if (!update.hasMessage() || !update.message.hasText()) {
+                return
             }
+
+            Message msg = update.message
+            String input = msg.text.toUpperCase()
+            String firstName = msg.chat.firstName
+            chatId = msg.chatId
+
+            storage.saveChatUser(chatId)
+
+            if (["/START", "HELP", "HELLO"].any { input == it }) {
+                textReply(storage.help(firstName))
+                return
+            }
+
+            if (input.startsWith('!')) {
+                textReply(bible.randomVerse)
+                return
+            }
+
+            if (input.startsWith('??')) {
+                photoReply(quotes.randomFact)
+                return
+            }
+
+            if (input.startsWith('?')) {
+                textReply(quotes.rollDice())
+                return
+            }
+
+            if (input.startsWith('$')) {
+                textReply(google.changeDollarsToRands(input))
+                return
+            }
+
+            if (input.startsWith('R')) {
+                textReply(google.changeRandsToDollars(input))
+                return
+            }
+
+            def foods = bible.checkFood(input)
+            if (foods.size() > 0) {
+                textReply(bible.format(foods))
+                return
+            }
+
+            photoReply(comic.strip)
         }
         catch (Exception e) {
-            log.log(SEVERE, e.message, e)
+            log.log(Level.SEVERE, e.message, e)
         }
     }
 
-    def sendText(long chatId, String text) {
+    private void textReply(String text) {
         def message = new SendMessage()
-        message.chatId = chatId
         message.text = text
+        message.chatId = chatId
         message.enableMarkdown(true)
         execute(message)
     }
 
-    def sendPhoto(long chatId, Strip strip) {
+    private void photoReply(Strip strip) {
         def photo = new SendPhoto()
         photo.chatId = chatId
         photo.photo = strip.imageUrl
         photo.caption = strip.caption
 
         if(strip.contentUrl) {
-            photo.replyMarkup = moreButton(strip)
+            def buttons = [ new InlineKeyboardButton(text: "Read more", url: strip.contentUrl) ]
+            photo.replyMarkup = new InlineKeyboardMarkup(keyboard: [ buttons ])
         }
 
         sendPhoto(photo)

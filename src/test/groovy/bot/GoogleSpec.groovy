@@ -1,7 +1,7 @@
 package bot
 
-import bot.common.HttpClient
-import bot.actions.*
+import bot.utilities.*
+import bot.services.*
 
 class GoogleSpec extends Spec {
 
@@ -9,7 +9,7 @@ class GoogleSpec extends Spec {
 
     def setup() {
         google = new Google(
-                client: new HttpClient(),
+                browser: new Browser(),
                 toRandsUrl: prop('bot.url.dollars.to.rands'),
                 toDollarsUrl: prop('bot.url.rands.to.dollars')
         )
@@ -17,11 +17,11 @@ class GoogleSpec extends Spec {
 
     def 'Correctly convert rands to dollars'() {
         expect:
-        google.convertRandsToDollars('R') == 'R1 = *0,084 US Dollars*'
+        google.changeRandsToDollars('R') == 'R1 = *0,084 US Dollars*'
     }
 
     def 'Correctly convert dollars to rands'() {
         expect:
-        google.convertDollarsToRands('$') == '$1 = *11,95 Rands*'
+        google.changeDollarsToRands('$') == '$1 = *11,95 Rands*'
     }
 }

@@ -5,3 +5,4 @@ target/
 .settings/
 *.iml
 *.log
+src/main/resources/application-local.properties

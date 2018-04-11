@@ -1,20 +1,23 @@
 package bot
 
-import bot.common.HttpClient
+import bot.utilities.Browser
 import bot.models.Strip
-import bot.actions.*
+import bot.services.*
 
 class CommitStripSpec extends Spec {
 
-    def 'Get the correct image url from the commitstrip website'() {
-        given:
-        CommitStrip commit = new CommitStrip(
-                client: new HttpClient(),
+    CommitStrip commit
+
+    def setup() {
+        commit = new CommitStrip(
+                browser: new Browser(),
                 url: prop('bot.url.commitstrip')
         )
+    }
 
+    def 'Get the correct data from the commitstrip website'() {
         when:
-        Strip strip = commit.getStrip()
+        Strip strip = commit.strip
 
         then:
         strip.contentUrl == null

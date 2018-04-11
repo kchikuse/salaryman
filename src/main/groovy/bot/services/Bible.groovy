@@ -1,40 +1,56 @@
-package bot.actions
+package bot.services
 
+import bot.utilities.*
+import bot.models.*
+import org.jsoup.nodes.Document
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
+import javax.inject.Inject
 
 @Service
-class Kosher {
+class Bible {
 
-    def check(String food) {
-        List<String> clean = []
-        List<String> unclean = []
+    @Inject
+    private Browser browser
+
+    @Value('${bot.url.bible}')
+    private String bibleUrl
+
+    String getRandomVerse() {
+        Document doc = browser.getHTML(bibleUrl)
+        String text =  doc.select(".bibleVerse").first().ownText()
+        String verse = doc.select(".bibleChapter a").first().text()
+        return String.format("%s - *%s*", text, verse)
+    }
+
+    List<Food> checkFood(String food) {
+        def foods = []
 
         for(String f : cleanFoods) {
             if(match(f, food)) {
-                clean.add(f +  " is *CLEAN*")
+                foods.add(new Food(name: f, clean: true))
             }
         }
 
         for(String f : dirtyFoods) {
             if(match(f, food)) {
-                unclean.add(f +  " is *UNCLEAN*")
+                foods.add(new Food(name: f, clean: false))
             }
         }
 
-        return [ clean: clean, unclean: unclean ]
+        return foods
+    }
+
+    static String format(List<Food> foods) {
+        return foods.collect {
+            "${it.name} is *${it.clean ? 'CLEAN' : 'UNCLEAN'}*"  }.join("\n")
     }
 
     private static boolean match(String food, String phrase) {
-        phrase = phrase.toUpperCase()
-        food = food.toUpperCase()
-        def words = food.split(" ")
-
-        if(food == phrase){
-            return true
-        }
+        def words = food.toUpperCase().split(" ")
 
         for(String word in words) {
-            if(food.startsWith(word)) {
+            if(phrase.equalsIgnoreCase(word)) {
                 return true
             }
         }
@@ -252,7 +268,8 @@ class Kosher {
             'Sagehen',
             'Sparrow',
             'Teal',
-            'Turkey']
+            'Turkey'
+    ]
 
     private final List<String> dirtyFoods = [
             'Pig',
@@ -338,7 +355,11 @@ class Kosher {
             'Stink Bug',
             'Stonefly',
             'Termite',
+            'Centipede',
+            'Scorpion',
+            'Skink',
             'Thrip',
+            'Chameleon',
             'Tiger Beetle',
             'Tiger Moth',
             'Tsetse Fly',
@@ -360,7 +381,8 @@ class Kosher {
             'Crow',
             'Cuckoo',
             'Eagle',
-            'Falco',
+            'Falcon',
+            'Peacock',
             'Flamingo Grebe',
             'Grosbeak',
             'Gull',
@@ -369,10 +391,13 @@ class Kosher {
             'Heron',
             'Ibis',
             'Kite',
+            'Kingfisher',
             'Lapwing',
+            'Nighthawk',
             'Loon',
             'Magpie',
             'Osprey',
+            'Ossifrage',
             'Ostrich',
             'Owl',
             'Parrot',
@@ -381,13 +406,16 @@ class Kosher {
             'Plover',
             'Rail',
             'Raven',
+            'Hoopoe',
             'Roadrunner',
             'Sandpiper',
             'Seagull',
             'Stork',
             'Swallow',
             'Swift',
+            'Swan',
             'Vulture',
+            'Black vulture',
             'Water hen',
             'Woodpecker',
             'Abalone',
@@ -416,7 +444,7 @@ class Kosher {
             'Seal',
             'Shark',
             'Shrimp',
-            'Snails',
+            'Snail',
             'Squid',
             'Calamari',
             'Stickleback',
@@ -463,6 +491,9 @@ class Kosher {
             'Mule',
             'Onager',
             'Zebra',
+            'Mopane worm',
+            'Earthworm',
+            'Shrew',
             'Kangaroo',
             'Koala',
             'Echidna',
@@ -502,7 +533,11 @@ class Kosher {
             'Pig Lard',
             'Toad',
             'Turtle',
+            'Ferret',
+            'Mouse',
+            'Stoat',
             'Wallaby',
             'Weasel',
-            'Wolverine']
+            'Wolverine'
+    ]
 }

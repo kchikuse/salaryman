@@ -1,17 +1,20 @@
 package bot
 
-import bot.common.HttpClient
-import bot.models.Strip
-import bot.actions.*
-import spock.lang.Ignore
+import bot.utilities.*
+import bot.models.*
+import bot.services.*
 
 class QuotableSpec extends Spec {
 
     Quotable quotable
 
+    Randomiser random
+
     def setup() {
+        random = Stub(Randomiser.class)
         quotable = new Quotable(
-                client: new HttpClient(),
+                browser: new Browser(),
+                random: random,
                 adviceUrl: prop('bot.url.random.advice'),
                 factsUrl: prop('bot.url.random.facts'),
                 quoteUrl: prop('bot.url.random.quotes')
@@ -20,25 +23,25 @@ class QuotableSpec extends Spec {
 
     def 'Get the correct advice text from the website'() {
         expect:
-        quotable.getRandomAdvice() == "😄 Everything matters, but nothing matters that much."
+        quotable.randomAdvice == "Everything matters, but nothing matters that much."
     }
 
     def 'Get the correct quote'() {
         expect:
-        quotable.getRandomQuotation() == "😄 A gem cannot be polished without friction, nor a man perfected without trials."
+        quotable.randomQuotation == "A gem cannot be polished without friction, nor a man perfected without trials."
     }
 
-    @Ignore
     def 'Get a random fact'() {
         given:
-        //when(utils.getRandomNumber(8)).thenReturn(0)
+        random.item(_ as List<?>) >> { it.first().get(4) }
         quotable = new Quotable(
-                client: new HttpClient(),
+                browser: new Browser(),
+                random: random,
                 factsUrl: prop('bot.url.random.facts')
         )
 
         when:
-        Strip fact = quotable.getRandomFact()
+        Strip fact = quotable.randomFact
 
         then:
         fact.contentUrl == "https://funfactz.com/law-and-crime-facts/mikerowesoft/"
@@ -46,17 +49,17 @@ class QuotableSpec extends Spec {
         fact.caption == "Microsoft once sued a student named Mike Rowe for registering the domain 'MikeRoweSoft.com'."
     }
 
-    @Ignore
     def 'Get a random fact without a photo'() {
         given:
-        //when(utils.getRandomNumber(8)).thenReturn(0)
+        random.item(_ as List<?>) >> { it.first().get(5) }
         quotable = new Quotable(
-                client: new HttpClient(),
+                browser: new Browser(),
+                random: random,
                 factsUrl: prop('bot.url.random.facts')
         )
 
         when:
-        Strip fact = quotable.getRandomFact()
+        Strip fact = quotable.randomFact
 
         then:
         fact.contentUrl == "https://funfactz.com/language-facts/the-words-racecar-kayak-and-level-are-the/"

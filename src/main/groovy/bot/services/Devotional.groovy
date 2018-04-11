@@ -1,7 +1,7 @@
-package bot.actions
+package bot.services
 
 import bot.ChikuseBot
-import bot.common.HttpClient
+import bot.utilities.*
 import groovy.util.logging.Log
 import org.joda.time.DateTime
 import org.jsoup.Jsoup
@@ -23,30 +23,28 @@ class Devotional {
     private ChikuseBot bot
 
     @Inject
-    private Database database
+    private Storage storage
 
     @Inject
-    private HttpClient client
+    private Browser browser
 
     @Value('${bot.url.small.straws}')
     private String strawsUrl
 
-    @Scheduled(cron = "0 00 10 * * MON-FRI", zone = "Africa/Johannesburg")
+    @Scheduled(cron = "0 03 9 * * MON-FRI", zone = "Africa/Johannesburg")
     void sendDailyDevotional() {
-        String text = getHTML()
-        def message = new SendMessage().enableHtml(true)
-        database.findAll().each { e ->
-            log.info("broadcast every weekday at 10am")
-            message.text = text
+        def message = new SendMessage(text: getText()).enableHtml(true)
+        storage.allChatUsers.each { e ->
+            log.info("broadcasting devotional every weekday at 9:03 am")
             message.chatId = e.chatId
             bot.execute(message)
         }
     }
 
-    private String getHTML() {
+    private String getText() {
         String todayVerse = ""
         String searchStr = new DateTime().toString("MMMM d, y")
-        Elements paragraphs = client.getHTML(strawsUrl).select("p")
+        Elements paragraphs = browser.getHTML(strawsUrl).select("p")
         for(Element p in paragraphs) {
             if(p.text().contains(searchStr)) {
                 todayVerse = p.html()
