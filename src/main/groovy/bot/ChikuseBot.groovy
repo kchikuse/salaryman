@@ -14,6 +14,7 @@ import org.telegram.telegrambots.bots.TelegramLongPollingBot
 
 import javax.inject.Inject
 import java.util.logging.Level
+import java.util.regex.Pattern
 
 import static org.springframework.beans.factory.config.ConfigurableBeanFactory.*
 
@@ -22,28 +23,31 @@ import static org.springframework.beans.factory.config.ConfigurableBeanFactory.*
 @Scope(SCOPE_SINGLETON)
 class ChikuseBot extends TelegramLongPollingBot {
 
-    private long chatId
+    long chatId
 
     @Value('${bot.token}')
-    private String token
+    String token
 
     @Value('${bot.username}')
-    private String username
+    String username
 
     @Inject
-    private Bible bible
+    Bible bible
 
     @Inject
-    private Google google
+    Google google
 
     @Inject
-    private Storage storage
+    Settings settings
 
     @Inject
-    private Quotable quotes
+    Quotable quotes
 
     @Inject
-    private CommitStrip comic
+    Comic comic
+
+    @Inject
+    Gautrain gautrain
 
     @Override
     void onUpdateReceived(Update update) {
@@ -55,55 +59,69 @@ class ChikuseBot extends TelegramLongPollingBot {
 
             Message msg = update.message
             String input = msg.text.toUpperCase()
-            String firstName = msg.chat.firstName
             chatId = msg.chatId
 
-            storage.saveChatUser(chatId)
+            settings.saveChatUser(chatId, msg.from.id)
 
-            if (["/START", "HELP", "HELLO"].any { input == it }) {
-                textReply(storage.help(firstName))
+            if (["/START", "HELP"].any { input == it }) {
+                sendTextReply(settings.intro)
                 return
             }
 
-            if (input.startsWith('!')) {
-                textReply(bible.randomVerse)
+            // Gautrain
+            if (input == "/G") {
+                Station a = gautrain.getStation("CENTURION")
+                Station b = gautrain.getStation("PARK")
+                sendTextReply(gautrain.getNextTrainFrom(a).To(b))
                 return
             }
 
-            if (input.startsWith('??')) {
-                photoReply(quotes.randomFact)
-                return
-            }
-
+            // quotations & advice
             if (input.startsWith('?')) {
-                textReply(quotes.rollDice())
+                def quote = quotes.random
+                if (quote.class == Photo.class) {
+                    sendPhotoReply(quote as Photo)
+                } else {
+                    sendTextReply(quote as String)
+                }
                 return
             }
 
+            // dollars to rands
             if (input.startsWith('$')) {
-                textReply(google.changeDollarsToRands(input))
+                sendTextReply(google.changeDollarsToRands(input))
                 return
             }
 
-            if (input.startsWith('R')) {
-                textReply(google.changeRandsToDollars(input))
+            // rands to dollars
+            if(Pattern.compile(/R[0-9.]+/).matcher(input)){
+                sendTextReply(google.changeRandsToDollars(input))
                 return
             }
 
-            def foods = bible.checkFood(input)
-            if (foods.size() > 0) {
-                textReply(bible.format(foods))
+            // bible verse
+            if (input.startsWith('+')) {
+                sendTextReply(bible.verse)
                 return
             }
 
-            photoReply(comic.strip)
+            // check if this meat is good to eat
+            def foods = bible.searchForFoods(input)
+            if ( ! foods.empty) {
+                String response = foods.collect { it.toString() }.join("\n")
+                sendTextReply(response)
+                return
+            }
+
+            // if all else fails, show a comic
+            sendPhotoReply(comic.strip)
         }
         catch (Exception e) {
             log.log(Level.SEVERE, e.message, e)
         }
     }
 
-    private void textReply(String text) {
+    def sendTextReply(String text) {
         def message = new SendMessage()
         message.text = text
         message.chatId = chatId
@@ -111,18 +129,18 @@ class ChikuseBot extends TelegramLongPollingBot {
         execute(message)
     }
 
-    private void photoReply(Strip strip) {
-        def photo = new SendPhoto()
-        photo.chatId = chatId
-        photo.photo = strip.imageUrl
-        photo.caption = strip.caption
+    def sendPhotoReply(Photo photo) {
+        def message = new SendPhoto()
+        message.chatId = chatId
+        message.photo = photo.imageUrl
+        message.caption = photo.caption
 
-        if(strip.contentUrl) {
-            def buttons = [ new InlineKeyboardButton(text: "Read more", url: strip.contentUrl) ]
-            photo.replyMarkup = new InlineKeyboardMarkup(keyboard: [ buttons ])
+        if(photo.contentUrl) {
+            def buttons = [ new InlineKeyboardButton(text: "Read more", url: photo.contentUrl) ]
+            message.replyMarkup = new InlineKeyboardMarkup(keyboard: [ buttons ])
         }
 
-        sendPhoto(photo)
+        sendPhoto(message)
     }
 
     @Override

@@ -1,0 +1,240 @@
+[
+  {
+    "id": "l99Qqgtul0imZWPofLfzyA",
+    "href": "https://platform.whereismytransport.com/api/stops/l99Qqgtul0imZWPofLfzyA",
+    "agency": {
+      "name": "Gautrain",
+      "culture": "en",
+      "description": null,
+      "id": "edObkk6o-0WN3tNZBLqKPg",
+      "href": "https://platform.whereismytransport.com/api/agencies/edObkk6o-0WN3tNZBLqKPg"
+    },
+    "name": "Centurion",
+    "code": null,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        28.1897,
+        -25.85161
+      ]
+    },
+    "modes": [
+      "Rail",
+      "Bus"
+    ]
+  },
+  {
+    "id": "_rkqSHvRE0Scvbcsuy0EVw",
+    "href": "https://platform.whereismytransport.com/api/stops/_rkqSHvRE0Scvbcsuy0EVw",
+    "agency": {
+      "name": "Gautrain",
+      "culture": "en",
+      "description": null,
+      "id": "edObkk6o-0WN3tNZBLqKPg",
+      "href": "https://platform.whereismytransport.com/api/agencies/edObkk6o-0WN3tNZBLqKPg"
+    },
+    "name": "Hatfield",
+    "code": null,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        28.23794,
+        -25.74762
+      ]
+    },
+    "modes": [
+      "Rail",
+      "Bus"
+    ]
+  },
+  {
+    "id": "GqW6XDaSsk-6eFTiiRt46A",
+    "href": "https://platform.whereismytransport.com/api/stops/GqW6XDaSsk-6eFTiiRt46A",
+    "agency": {
+      "name": "Gautrain",
+      "culture": "en",
+      "description": null,
+      "id": "edObkk6o-0WN3tNZBLqKPg",
+      "href": "https://platform.whereismytransport.com/api/agencies/edObkk6o-0WN3tNZBLqKPg"
+    },
+    "name": "Marlboro",
+    "code": null,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        28.11164,
+        -26.08337
+      ]
+    },
+    "modes": [
+      "Rail"
+    ]
+  },
+  {
+    "id": "ucS8WAkRbkiKUDPHCVxSYA",
+    "href": "https://platform.whereismytransport.com/api/stops/ucS8WAkRbkiKUDPHCVxSYA",
+    "agency": {
+      "name": "Gautrain",
+      "culture": "en",
+      "description": null,
+      "id": "edObkk6o-0WN3tNZBLqKPg",
+      "href": "https://platform.whereismytransport.com/api/agencies/edObkk6o-0WN3tNZBLqKPg"
+    },
+    "name": "Midrand",
+    "code": null,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        28.13586,
+        -25.99555
+      ]
+    },
+    "modes": [
+      "Rail",
+      "Bus"
+    ]
+  },
+  {
+    "id": "nsg0gaT4zkWiYlX31c18Ew",
+    "href": "https://platform.whereismytransport.com/api/stops/nsg0gaT4zkWiYlX31c18Ew",
+    "agency": {
+      "name": "Gautrain",
+      "culture": "en",
+      "description": null,
+      "id": "edObkk6o-0WN3tNZBLqKPg",
+      "href": "https://platform.whereismytransport.com/api/agencies/edObkk6o-0WN3tNZBLqKPg"
+    },
+    "name": "OR Tambo",
+    "code": null,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        28.23127,
+        -26.13225
+      ]
+    },
+    "modes": [
+      "Rail"
+    ]
+  },
+  {
+    "id": "hIhX2tikw0SinKacAKV6YQ",
+    "href": "https://platform.whereismytransport.com/api/stops/hIhX2tikw0SinKacAKV6YQ",
+    "agency": {
+      "name": "Gautrain",
+      "culture": "en",
+      "description": null,
+      "id": "edObkk6o-0WN3tNZBLqKPg",
+      "href": "https://platform.whereismytransport.com/api/agencies/edObkk6o-0WN3tNZBLqKPg"
+    },
+    "name": "Park",
+    "code": null,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        28.04148,
+        -26.19558
+      ]
+    },
+    "modes": [
+      "Rail",
+      "Bus"
+    ]
+  },
+  {
+    "id": "hv_Bf87q50W48rwIUwqCTg",
+    "href": "https://platform.whereismytransport.com/api/stops/hv_Bf87q50W48rwIUwqCTg",
+    "agency": {
+      "name": "Gautrain",
+      "culture": "en",
+      "description": null,
+      "id": "edObkk6o-0WN3tNZBLqKPg",
+      "href": "https://platform.whereismytransport.com/api/agencies/edObkk6o-0WN3tNZBLqKPg"
+    },
+    "name": "Pretoria",
+    "code": null,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        28.18988,
+        -25.75866
+      ]
+    },
+    "modes": [
+      "Rail",
+      "Bus"
+    ]
+  },
+  {
+    "id": "nOZz7-NPrEmB2KacALquAA",
+    "href": "https://platform.whereismytransport.com/api/stops/nOZz7-NPrEmB2KacALquAA",
+    "agency": {
+      "name": "Gautrain",
+      "culture": "en",
+      "description": null,
+      "id": "edObkk6o-0WN3tNZBLqKPg",
+      "href": "https://platform.whereismytransport.com/api/agencies/edObkk6o-0WN3tNZBLqKPg"
+    },
+    "name": "Rhodesfield",
+    "code": null,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        28.22461,
+        -26.12732
+      ]
+    },
+    "modes": [
+      "Rail",
+      "Bus"
+    ]
+  },
+  {
+    "id": "9HM2lKh9F0mYQfRSO6CGCw",
+    "href": "https://platform.whereismytransport.com/api/stops/9HM2lKh9F0mYQfRSO6CGCw",
+    "agency": {
+      "name": "Gautrain",
+      "culture": "en",
+      "description": null,
+      "id": "edObkk6o-0WN3tNZBLqKPg",
+      "href": "https://platform.whereismytransport.com/api/agencies/edObkk6o-0WN3tNZBLqKPg"
+    },
+    "name": "Rosebank",
+    "code": null,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        28.04451,
+        -26.14622
+      ]
+    },
+    "modes": [
+      "Rail",
+      "Bus"
+    ]
+  },
+  {
+    "id": "jXU-OlvxukW8wfc7JeVeXw",
+    "href": "https://platform.whereismytransport.com/api/stops/jXU-OlvxukW8wfc7JeVeXw",
+    "agency": {
+      "name": "Gautrain",
+      "culture": "en",
+      "description": null,
+      "id": "edObkk6o-0WN3tNZBLqKPg",
+      "href": "https://platform.whereismytransport.com/api/agencies/edObkk6o-0WN3tNZBLqKPg"
+    },
+    "name": "Sandton",
+    "code": null,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        28.05693,
+        -26.10858
+      ]
+    },
+    "modes": [
+      "Rail",
+      "Bus"
+    ]
+  }
+]

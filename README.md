@@ -8,7 +8,4 @@
 
 - `java -jar bot-1.0-SNAPSHOT.war`
 
-
-##
-
-https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/scheduling/support/CronSequenceGenerator.html
+https://telegram.me/chikuse_bot

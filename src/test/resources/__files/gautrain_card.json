@@ -1,0 +1,55 @@
+[
+  {
+    "description": "Cool Card",
+    "cashBalance": {
+      "baseAmount": 1000
+    },
+    "currentProduct": null,
+    "mediaId": "3452902746",
+    "cardType": "GC",
+    "userId": "f5e5222e-4961-4243-ac7b-9e3776fb2f5c",
+    "fullCardNumber": "4988167853710000069391105",
+    "lastFourDigits": "1105",
+    "cardSerial": "498816785",
+    "expiry": "2022-12-31",
+    "status": "ENABLED",
+    "transitAccountId": "3452902746",
+    "pendingBalances": [],
+    "maxAllowedPurseReload": {
+      "baseAmount": 319000
+    },
+    "eligibleForRefund": false,
+    "hasPendingProduct": false,
+    "features": {
+      "reload": true,
+      "travelHistory": true,
+      "block": true,
+      "settleDebt": false,
+      "refund": false,
+      "products": true
+    },
+    "attachableProducts": [
+      {
+        "id": "1004",
+        "name": "Weekly Product",
+        "description": "Weekly Product"
+      },
+      {
+        "id": "1024",
+        "name": "Monthly Product",
+        "description": "Monthly Product"
+      },
+      {
+        "id": "1068",
+        "name": "Single Trip",
+        "description": "Single Trip"
+      },
+      {
+        "id": "1069",
+        "name": "Return Trip",
+        "description": "Return Trip"
+      }
+    ],
+    "reloadAllowed": true
+  }
+]

@@ -3,14 +3,11 @@ package bot.services
 import bot.utilities.*
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
-import javax.inject.Inject
-import static java.lang.String.format
+
+import static java.lang.String.*
 
 @Service
 class Google {
-
-    @Inject
-    private Browser browser
 
     @Value('${bot.url.dollars.to.rands}')
     private String toRandsUrl
@@ -30,8 +27,8 @@ class Google {
         return format('R%s = *%s US Dollars*', rands, dollars)
     }
 
-    private String convert(String url, String amount) {
-        return browser.getHTML(format(url, amount))
+    private static String convert(String url, String amount) {
+        return Browser.getHTML(format(url, amount))
                 .select("#knowledge-currency__tgt-amount")
                 .first()
                 .text()

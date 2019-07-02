@@ -1,0 +1,2737 @@
+{
+  "geometry": {
+    "type": "MultiPoint",
+    "coordinates": [
+      [
+        28.23794,
+        -25.74762
+      ],
+      [
+        28.1897,
+        -25.85161
+      ]
+    ]
+  },
+  "maxItineraries": 5,
+  "itineraries": [
+    {
+      "id": "mKJQXfZ-3EGbRamHAOKJ5g",
+      "href": "https://platform.whereismytransport.com/api/journeys/mup7XV0550mC6qmHAOKJyg/itineraries/mKJQXfZ-3EGbRamHAOKJ5g",
+      "departureTime": "2018-10-28T13:56:20Z",
+      "arrivalTime": "2018-10-28T14:10:25Z",
+      "distance": {
+        "value": 16781,
+        "unit": "m"
+      },
+      "duration": 845,
+      "legs": [
+        {
+          "type": "Transit",
+          "distance": {
+            "value": 16781,
+            "unit": "m"
+          },
+          "duration": 845,
+          "line": {
+            "agency": {
+              "name": "Gautrain",
+              "culture": "en",
+              "description": null,
+              "id": "edObkk6o-0WN3tNZBLqKPg",
+              "href": "https://platform.whereismytransport.com/api/agencies/edObkk6o-0WN3tNZBLqKPg"
+            },
+            "name": "North - South Line",
+            "shortName": "North - South",
+            "description": null,
+            "mode": "Rail",
+            "colour": "#ffb12f23",
+            "textColour": "#ffffffff",
+            "id": "WxfgoY4h-kO-1qakAPt1iA",
+            "href": "https://platform.whereismytransport.com/api/lines/WxfgoY4h-kO-1qakAPt1iA"
+          },
+          "waypoints": [
+            {
+              "arrivalTime": "2018-10-28T13:56:20Z",
+              "departureTime": "2018-10-28T13:56:20Z",
+              "stop": {
+                "id": "L_FHO9WV5Eav-7TMOhzkxw",
+                "href": "https://platform.whereismytransport.com/api/stops/L_FHO9WV5Eav-7TMOhzkxw",
+                "agency": {
+                  "name": "Gautrain",
+                  "culture": "en",
+                  "description": null,
+                  "id": "edObkk6o-0WN3tNZBLqKPg",
+                  "href": "https://platform.whereismytransport.com/api/agencies/edObkk6o-0WN3tNZBLqKPg"
+                },
+                "name": "Hatfield",
+                "code": null,
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    28.23794,
+                    -25.74762
+                  ]
+                },
+                "modes": [
+                  "Rail"
+                ]
+              },
+              "location": null
+            },
+            {
+              "arrivalTime": "2018-10-28T14:02:25Z",
+              "departureTime": "2018-10-28T14:03:55Z",
+              "stop": {
+                "id": "kAhwIctp2kWQaemv8-UEJQ",
+                "href": "https://platform.whereismytransport.com/api/stops/kAhwIctp2kWQaemv8-UEJQ",
+                "agency": {
+                  "name": "Gautrain",
+                  "culture": "en",
+                  "description": null,
+                  "id": "edObkk6o-0WN3tNZBLqKPg",
+                  "href": "https://platform.whereismytransport.com/api/agencies/edObkk6o-0WN3tNZBLqKPg"
+                },
+                "name": "Pretoria",
+                "code": null,
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    28.18988,
+                    -25.75866
+                  ]
+                },
+                "modes": [
+                  "Rail"
+                ]
+              },
+              "location": null
+            },
+            {
+              "arrivalTime": "2018-10-28T14:10:25Z",
+              "departureTime": "2018-10-28T14:10:25Z",
+              "stop": {
+                "id": "EVqyiLEv9ke1HUtWTUDOCQ",
+                "href": "https://platform.whereismytransport.com/api/stops/EVqyiLEv9ke1HUtWTUDOCQ",
+                "agency": {
+                  "name": "Gautrain",
+                  "culture": "en",
+                  "description": null,
+                  "id": "edObkk6o-0WN3tNZBLqKPg",
+                  "href": "https://platform.whereismytransport.com/api/agencies/edObkk6o-0WN3tNZBLqKPg"
+                },
+                "name": "Centurion",
+                "code": null,
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    28.1897,
+                    -25.85161
+                  ]
+                },
+                "modes": [
+                  "Rail"
+                ]
+              },
+              "location": null
+            }
+          ],
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                28.23798,
+                -25.74773
+              ],
+              [
+                28.23652,
+                -25.74822
+              ],
+              [
+                28.23236,
+                -25.74973
+              ],
+              [
+                28.23022,
+                -25.75043
+              ],
+              [
+                28.22976,
+                -25.75065
+              ],
+              [
+                28.22938,
+                -25.7509
+              ],
+              [
+                28.22897,
+                -25.75122
+              ],
+              [
+                28.22828,
+                -25.75189
+              ],
+              [
+                28.22644,
+                -25.75393
+              ],
+              [
+                28.22177,
+                -25.75905
+              ],
+              [
+                28.22138,
+                -25.75939
+              ],
+              [
+                28.2209,
+                -25.75972
+              ],
+              [
+                28.22058,
+                -25.75986
+              ],
+              [
+                28.2198,
+                -25.76011
+              ],
+              [
+                28.21908,
+                -25.76023
+              ],
+              [
+                28.21865,
+                -25.76024
+              ],
+              [
+                28.21802,
+                -25.76019
+              ],
+              [
+                28.21541,
+                -25.75985
+              ],
+              [
+                28.21507,
+                -25.75984
+              ],
+              [
+                28.2147,
+                -25.75987
+              ],
+              [
+                28.21434,
+                -25.75995
+              ],
+              [
+                28.21398,
+                -25.76007
+              ],
+              [
+                28.21277,
+                -25.76056
+              ],
+              [
+                28.21226,
+                -25.76074
+              ],
+              [
+                28.21176,
+                -25.76084
+              ],
+              [
+                28.21141,
+                -25.76086
+              ],
+              [
+                28.2109,
+                -25.76084
+              ],
+              [
+                28.20323,
+                -25.75981
+              ],
+              [
+                28.20265,
+                -25.75979
+              ],
+              [
+                28.20219,
+                -25.75982
+              ],
+              [
+                28.20168,
+                -25.75994
+              ],
+              [
+                28.20118,
+                -25.76014
+              ],
+              [
+                28.20079,
+                -25.76039
+              ],
+              [
+                28.19705,
+                -25.76338
+              ],
+              [
+                28.19664,
+                -25.76365
+              ],
+              [
+                28.19633,
+                -25.7638
+              ],
+              [
+                28.19605,
+                -25.76387
+              ],
+              [
+                28.19532,
+                -25.76392
+              ],
+              [
+                28.19466,
+                -25.76383
+              ],
+              [
+                28.19427,
+                -25.7637
+              ],
+              [
+                28.19386,
+                -25.7635
+              ],
+              [
+                28.19347,
+                -25.76321
+              ],
+              [
+                28.19272,
+                -25.76241
+              ],
+              [
+                28.18987,
+                -25.75873
+              ],
+              [
+                28.18987,
+                -25.75873
+              ],
+              [
+                28.19272,
+                -25.76241
+              ],
+              [
+                28.19293,
+                -25.76265
+              ],
+              [
+                28.19327,
+                -25.76318
+              ],
+              [
+                28.19347,
+                -25.76367
+              ],
+              [
+                28.19355,
+                -25.76411
+              ],
+              [
+                28.19353,
+                -25.76495
+              ],
+              [
+                28.19324,
+                -25.76732
+              ],
+              [
+                28.19298,
+                -25.76986
+              ],
+              [
+                28.19303,
+                -25.77287
+              ],
+              [
+                28.19295,
+                -25.77371
+              ],
+              [
+                28.19279,
+                -25.7747
+              ],
+              [
+                28.19145,
+                -25.77875
+              ],
+              [
+                28.19035,
+                -25.78153
+              ],
+              [
+                28.18925,
+                -25.7847
+              ],
+              [
+                28.18879,
+                -25.78593
+              ],
+              [
+                28.18844,
+                -25.78668
+              ],
+              [
+                28.18778,
+                -25.78773
+              ],
+              [
+                28.18718,
+                -25.78853
+              ],
+              [
+                28.18659,
+                -25.78915
+              ],
+              [
+                28.18586,
+                -25.78984
+              ],
+              [
+                28.18394,
+                -25.79131
+              ],
+              [
+                28.18296,
+                -25.7921
+              ],
+              [
+                28.18194,
+                -25.79317
+              ],
+              [
+                28.1816,
+                -25.7936
+              ],
+              [
+                28.18108,
+                -25.79435
+              ],
+              [
+                28.18066,
+                -25.79507
+              ],
+              [
+                28.18027,
+                -25.79596
+              ],
+              [
+                28.17992,
+                -25.79694
+              ],
+              [
+                28.17965,
+                -25.79818
+              ],
+              [
+                28.17957,
+                -25.79897
+              ],
+              [
+                28.17954,
+                -25.79991
+              ],
+              [
+                28.17985,
+                -25.81185
+              ],
+              [
+                28.17997,
+                -25.8156
+              ],
+              [
+                28.18001,
+                -25.81801
+              ],
+              [
+                28.18012,
+                -25.82042
+              ],
+              [
+                28.18034,
+                -25.82221
+              ],
+              [
+                28.18066,
+                -25.82353
+              ],
+              [
+                28.18085,
+                -25.82418
+              ],
+              [
+                28.18243,
+                -25.82868
+              ],
+              [
+                28.18273,
+                -25.82966
+              ],
+              [
+                28.18294,
+                -25.83051
+              ],
+              [
+                28.18394,
+                -25.83747
+              ],
+              [
+                28.1848,
+                -25.84297
+              ],
+              [
+                28.185,
+                -25.84384
+              ],
+              [
+                28.18522,
+                -25.84463
+              ],
+              [
+                28.18539,
+                -25.84517
+              ],
+              [
+                28.18576,
+                -25.84607
+              ],
+              [
+                28.18614,
+                -25.84686
+              ],
+              [
+                28.18648,
+                -25.84749
+              ],
+              [
+                28.18724,
+                -25.84867
+              ],
+              [
+                28.18951,
+                -25.85174
+              ]
+            ]
+          },
+          "fare": {
+            "description": "Peak",
+            "fareProduct": {
+              "id": "ermjGrmlykSGKGr3-GJaOQ",
+              "href": "https://platform.whereismytransport.com/api/fareproducts/ermjGrmlykSGKGr3-GJaOQ",
+              "name": "Pay-As-You-Go",
+              "description": "Pay-As-You-Go",
+              "restrictions": null,
+              "default": true,
+              "isDefault": true
+            },
+            "cost": {
+              "amount": 34,
+              "currencyCode": "ZAR"
+            },
+            "messages": [
+              "Transfer discount"
+            ],
+            "id": null,
+            "href": null
+          },
+          "directions": null,
+          "vehicle": {
+            "designation": "4 Car",
+            "direction": null,
+            "headsign": "Park"
+          },
+          "id": null,
+          "href": "https://platform.whereismytransport.com/api/journeys/mup7XV0550mC6qmHAOKJyg/itineraries/mKJQXfZ-3EGbRamHAOKJ5g/legs/1"
+        }
+      ]
+    },
+    {
+      "id": "1d20VDNl5UOT4amHAOKJ5g",
+      "href": "https://platform.whereismytransport.com/api/journeys/mup7XV0550mC6qmHAOKJyg/itineraries/1d20VDNl5UOT4amHAOKJ5g",
+      "departureTime": "2018-10-28T14:26:20Z",
+      "arrivalTime": "2018-10-28T14:40:25Z",
+      "distance": {
+        "value": 16781,
+        "unit": "m"
+      },
+      "duration": 845,
+      "legs": [
+        {
+          "type": "Transit",
+          "distance": {
+            "value": 16781,
+            "unit": "m"
+          },
+          "duration": 845,
+          "line": {
+            "agency": {
+              "name": "Gautrain",
+              "culture": "en",
+              "description": null,
+              "id": "edObkk6o-0WN3tNZBLqKPg",
+              "href": "https://platform.whereismytransport.com/api/agencies/edObkk6o-0WN3tNZBLqKPg"
+            },
+            "name": "North - South Line",
+            "shortName": "North - South",
+            "description": null,
+            "mode": "Rail",
+            "colour": "#ffb12f23",
+            "textColour": "#ffffffff",
+            "id": "WxfgoY4h-kO-1qakAPt1iA",
+            "href": "https://platform.whereismytransport.com/api/lines/WxfgoY4h-kO-1qakAPt1iA"
+          },
+          "waypoints": [
+            {
+              "arrivalTime": "2018-10-28T14:26:20Z",
+              "departureTime": "2018-10-28T14:26:20Z",
+              "stop": {
+                "id": "L_FHO9WV5Eav-7TMOhzkxw",
+                "href": "https://platform.whereismytransport.com/api/stops/L_FHO9WV5Eav-7TMOhzkxw",
+                "agency": {
+                  "name": "Gautrain",
+                  "culture": "en",
+                  "description": null,
+                  "id": "edObkk6o-0WN3tNZBLqKPg",
+                  "href": "https://platform.whereismytransport.com/api/agencies/edObkk6o-0WN3tNZBLqKPg"
+                },
+                "name": "Hatfield",
+                "code": null,
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    28.23794,
+                    -25.74762
+                  ]
+                },
+                "modes": [
+                  "Rail"
+                ]
+              },
+              "location": null
+            },
+            {
+              "arrivalTime": "2018-10-28T14:32:25Z",
+              "departureTime": "2018-10-28T14:33:55Z",
+              "stop": {
+                "id": "kAhwIctp2kWQaemv8-UEJQ",
+                "href": "https://platform.whereismytransport.com/api/stops/kAhwIctp2kWQaemv8-UEJQ",
+                "agency": {
+                  "name": "Gautrain",
+                  "culture": "en",
+                  "description": null,
+                  "id": "edObkk6o-0WN3tNZBLqKPg",
+                  "href": "https://platform.whereismytransport.com/api/agencies/edObkk6o-0WN3tNZBLqKPg"
+                },
+                "name": "Pretoria",
+                "code": null,
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    28.18988,
+                    -25.75866
+                  ]
+                },
+                "modes": [
+                  "Rail"
+                ]
+              },
+              "location": null
+            },
+            {
+              "arrivalTime": "2018-10-28T14:40:25Z",
+              "departureTime": "2018-10-28T14:40:25Z",
+              "stop": {
+                "id": "EVqyiLEv9ke1HUtWTUDOCQ",
+                "href": "https://platform.whereismytransport.com/api/stops/EVqyiLEv9ke1HUtWTUDOCQ",
+                "agency": {
+                  "name": "Gautrain",
+                  "culture": "en",
+                  "description": null,
+                  "id": "edObkk6o-0WN3tNZBLqKPg",
+                  "href": "https://platform.whereismytransport.com/api/agencies/edObkk6o-0WN3tNZBLqKPg"
+                },
+                "name": "Centurion",
+                "code": null,
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    28.1897,
+                    -25.85161
+                  ]
+                },
+                "modes": [
+                  "Rail"
+                ]
+              },
+              "location": null
+            }
+          ],
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                28.23798,
+                -25.74773
+              ],
+              [
+                28.23652,
+                -25.74822
+              ],
+              [
+                28.23236,
+                -25.74973
+              ],
+              [
+                28.23022,
+                -25.75043
+              ],
+              [
+                28.22976,
+                -25.75065
+              ],
+              [
+                28.22938,
+                -25.7509
+              ],
+              [
+                28.22897,
+                -25.75122
+              ],
+              [
+                28.22828,
+                -25.75189
+              ],
+              [
+                28.22644,
+                -25.75393
+              ],
+              [
+                28.22177,
+                -25.75905
+              ],
+              [
+                28.22138,
+                -25.75939
+              ],
+              [
+                28.2209,
+                -25.75972
+              ],
+              [
+                28.22058,
+                -25.75986
+              ],
+              [
+                28.2198,
+                -25.76011
+              ],
+              [
+                28.21908,
+                -25.76023
+              ],
+              [
+                28.21865,
+                -25.76024
+              ],
+              [
+                28.21802,
+                -25.76019
+              ],
+              [
+                28.21541,
+                -25.75985
+              ],
+              [
+                28.21507,
+                -25.75984
+              ],
+              [
+                28.2147,
+                -25.75987
+              ],
+              [
+                28.21434,
+                -25.75995
+              ],
+              [
+                28.21398,
+                -25.76007
+              ],
+              [
+                28.21277,
+                -25.76056
+              ],
+              [
+                28.21226,
+                -25.76074
+              ],
+              [
+                28.21176,
+                -25.76084
+              ],
+              [
+                28.21141,
+                -25.76086
+              ],
+              [
+                28.2109,
+                -25.76084
+              ],
+              [
+                28.20323,
+                -25.75981
+              ],
+              [
+                28.20265,
+                -25.75979
+              ],
+              [
+                28.20219,
+                -25.75982
+              ],
+              [
+                28.20168,
+                -25.75994
+              ],
+              [
+                28.20118,
+                -25.76014
+              ],
+              [
+                28.20079,
+                -25.76039
+              ],
+              [
+                28.19705,
+                -25.76338
+              ],
+              [
+                28.19664,
+                -25.76365
+              ],
+              [
+                28.19633,
+                -25.7638
+              ],
+              [
+                28.19605,
+                -25.76387
+              ],
+              [
+                28.19532,
+                -25.76392
+              ],
+              [
+                28.19466,
+                -25.76383
+              ],
+              [
+                28.19427,
+                -25.7637
+              ],
+              [
+                28.19386,
+                -25.7635
+              ],
+              [
+                28.19347,
+                -25.76321
+              ],
+              [
+                28.19272,
+                -25.76241
+              ],
+              [
+                28.18987,
+                -25.75873
+              ],
+              [
+                28.18987,
+                -25.75873
+              ],
+              [
+                28.19272,
+                -25.76241
+              ],
+              [
+                28.19293,
+                -25.76265
+              ],
+              [
+                28.19327,
+                -25.76318
+              ],
+              [
+                28.19347,
+                -25.76367
+              ],
+              [
+                28.19355,
+                -25.76411
+              ],
+              [
+                28.19353,
+                -25.76495
+              ],
+              [
+                28.19324,
+                -25.76732
+              ],
+              [
+                28.19298,
+                -25.76986
+              ],
+              [
+                28.19303,
+                -25.77287
+              ],
+              [
+                28.19295,
+                -25.77371
+              ],
+              [
+                28.19279,
+                -25.7747
+              ],
+              [
+                28.19145,
+                -25.77875
+              ],
+              [
+                28.19035,
+                -25.78153
+              ],
+              [
+                28.18925,
+                -25.7847
+              ],
+              [
+                28.18879,
+                -25.78593
+              ],
+              [
+                28.18844,
+                -25.78668
+              ],
+              [
+                28.18778,
+                -25.78773
+              ],
+              [
+                28.18718,
+                -25.78853
+              ],
+              [
+                28.18659,
+                -25.78915
+              ],
+              [
+                28.18586,
+                -25.78984
+              ],
+              [
+                28.18394,
+                -25.79131
+              ],
+              [
+                28.18296,
+                -25.7921
+              ],
+              [
+                28.18194,
+                -25.79317
+              ],
+              [
+                28.1816,
+                -25.7936
+              ],
+              [
+                28.18108,
+                -25.79435
+              ],
+              [
+                28.18066,
+                -25.79507
+              ],
+              [
+                28.18027,
+                -25.79596
+              ],
+              [
+                28.17992,
+                -25.79694
+              ],
+              [
+                28.17965,
+                -25.79818
+              ],
+              [
+                28.17957,
+                -25.79897
+              ],
+              [
+                28.17954,
+                -25.79991
+              ],
+              [
+                28.17985,
+                -25.81185
+              ],
+              [
+                28.17997,
+                -25.8156
+              ],
+              [
+                28.18001,
+                -25.81801
+              ],
+              [
+                28.18012,
+                -25.82042
+              ],
+              [
+                28.18034,
+                -25.82221
+              ],
+              [
+                28.18066,
+                -25.82353
+              ],
+              [
+                28.18085,
+                -25.82418
+              ],
+              [
+                28.18243,
+                -25.82868
+              ],
+              [
+                28.18273,
+                -25.82966
+              ],
+              [
+                28.18294,
+                -25.83051
+              ],
+              [
+                28.18394,
+                -25.83747
+              ],
+              [
+                28.1848,
+                -25.84297
+              ],
+              [
+                28.185,
+                -25.84384
+              ],
+              [
+                28.18522,
+                -25.84463
+              ],
+              [
+                28.18539,
+                -25.84517
+              ],
+              [
+                28.18576,
+                -25.84607
+              ],
+              [
+                28.18614,
+                -25.84686
+              ],
+              [
+                28.18648,
+                -25.84749
+              ],
+              [
+                28.18724,
+                -25.84867
+              ],
+              [
+                28.18951,
+                -25.85174
+              ]
+            ]
+          },
+          "fare": {
+            "description": "Peak",
+            "fareProduct": {
+              "id": "ermjGrmlykSGKGr3-GJaOQ",
+              "href": "https://platform.whereismytransport.com/api/fareproducts/ermjGrmlykSGKGr3-GJaOQ",
+              "name": "Pay-As-You-Go",
+              "description": "Pay-As-You-Go",
+              "restrictions": null,
+              "default": true,
+              "isDefault": true
+            },
+            "cost": {
+              "amount": 34,
+              "currencyCode": "ZAR"
+            },
+            "messages": [
+              "Transfer discount"
+            ],
+            "id": null,
+            "href": null
+          },
+          "directions": null,
+          "vehicle": {
+            "designation": "4 Car",
+            "direction": null,
+            "headsign": "Park"
+          },
+          "id": null,
+          "href": "https://platform.whereismytransport.com/api/journeys/mup7XV0550mC6qmHAOKJyg/itineraries/1d20VDNl5UOT4amHAOKJ5g/legs/1"
+        }
+      ]
+    },
+    {
+      "id": "lxGY5ThceE-MQqmHAOKJ5g",
+      "href": "https://platform.whereismytransport.com/api/journeys/mup7XV0550mC6qmHAOKJyg/itineraries/lxGY5ThceE-MQqmHAOKJ5g",
+      "departureTime": "2018-10-28T14:56:20Z",
+      "arrivalTime": "2018-10-28T15:10:25Z",
+      "distance": {
+        "value": 16781,
+        "unit": "m"
+      },
+      "duration": 845,
+      "legs": [
+        {
+          "type": "Transit",
+          "distance": {
+            "value": 16781,
+            "unit": "m"
+          },
+          "duration": 845,
+          "line": {
+            "agency": {
+              "name": "Gautrain",
+              "culture": "en",
+              "description": null,
+              "id": "edObkk6o-0WN3tNZBLqKPg",
+              "href": "https://platform.whereismytransport.com/api/agencies/edObkk6o-0WN3tNZBLqKPg"
+            },
+            "name": "North - South Line",
+            "shortName": "North - South",
+            "description": null,
+            "mode": "Rail",
+            "colour": "#ffb12f23",
+            "textColour": "#ffffffff",
+            "id": "WxfgoY4h-kO-1qakAPt1iA",
+            "href": "https://platform.whereismytransport.com/api/lines/WxfgoY4h-kO-1qakAPt1iA"
+          },
+          "waypoints": [
+            {
+              "arrivalTime": "2018-10-28T14:56:20Z",
+              "departureTime": "2018-10-28T14:56:20Z",
+              "stop": {
+                "id": "L_FHO9WV5Eav-7TMOhzkxw",
+                "href": "https://platform.whereismytransport.com/api/stops/L_FHO9WV5Eav-7TMOhzkxw",
+                "agency": {
+                  "name": "Gautrain",
+                  "culture": "en",
+                  "description": null,
+                  "id": "edObkk6o-0WN3tNZBLqKPg",
+                  "href": "https://platform.whereismytransport.com/api/agencies/edObkk6o-0WN3tNZBLqKPg"
+                },
+                "name": "Hatfield",
+                "code": null,
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    28.23794,
+                    -25.74762
+                  ]
+                },
+                "modes": [
+                  "Rail"
+                ]
+              },
+              "location": null
+            },
+            {
+              "arrivalTime": "2018-10-28T15:02:25Z",
+              "departureTime": "2018-10-28T15:03:55Z",
+              "stop": {
+                "id": "kAhwIctp2kWQaemv8-UEJQ",
+                "href": "https://platform.whereismytransport.com/api/stops/kAhwIctp2kWQaemv8-UEJQ",
+                "agency": {
+                  "name": "Gautrain",
+                  "culture": "en",
+                  "description": null,
+                  "id": "edObkk6o-0WN3tNZBLqKPg",
+                  "href": "https://platform.whereismytransport.com/api/agencies/edObkk6o-0WN3tNZBLqKPg"
+                },
+                "name": "Pretoria",
+                "code": null,
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    28.18988,
+                    -25.75866
+                  ]
+                },
+                "modes": [
+                  "Rail"
+                ]
+              },
+              "location": null
+            },
+            {
+              "arrivalTime": "2018-10-28T15:10:25Z",
+              "departureTime": "2018-10-28T15:10:25Z",
+              "stop": {
+                "id": "EVqyiLEv9ke1HUtWTUDOCQ",
+                "href": "https://platform.whereismytransport.com/api/stops/EVqyiLEv9ke1HUtWTUDOCQ",
+                "agency": {
+                  "name": "Gautrain",
+                  "culture": "en",
+                  "description": null,
+                  "id": "edObkk6o-0WN3tNZBLqKPg",
+                  "href": "https://platform.whereismytransport.com/api/agencies/edObkk6o-0WN3tNZBLqKPg"
+                },
+                "name": "Centurion",
+                "code": null,
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    28.1897,
+                    -25.85161
+                  ]
+                },
+                "modes": [
+                  "Rail"
+                ]
+              },
+              "location": null
+            }
+          ],
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                28.23798,
+                -25.74773
+              ],
+              [
+                28.23652,
+                -25.74822
+              ],
+              [
+                28.23236,
+                -25.74973
+              ],
+              [
+                28.23022,
+                -25.75043
+              ],
+              [
+                28.22976,
+                -25.75065
+              ],
+              [
+                28.22938,
+                -25.7509
+              ],
+              [
+                28.22897,
+                -25.75122
+              ],
+              [
+                28.22828,
+                -25.75189
+              ],
+              [
+                28.22644,
+                -25.75393
+              ],
+              [
+                28.22177,
+                -25.75905
+              ],
+              [
+                28.22138,
+                -25.75939
+              ],
+              [
+                28.2209,
+                -25.75972
+              ],
+              [
+                28.22058,
+                -25.75986
+              ],
+              [
+                28.2198,
+                -25.76011
+              ],
+              [
+                28.21908,
+                -25.76023
+              ],
+              [
+                28.21865,
+                -25.76024
+              ],
+              [
+                28.21802,
+                -25.76019
+              ],
+              [
+                28.21541,
+                -25.75985
+              ],
+              [
+                28.21507,
+                -25.75984
+              ],
+              [
+                28.2147,
+                -25.75987
+              ],
+              [
+                28.21434,
+                -25.75995
+              ],
+              [
+                28.21398,
+                -25.76007
+              ],
+              [
+                28.21277,
+                -25.76056
+              ],
+              [
+                28.21226,
+                -25.76074
+              ],
+              [
+                28.21176,
+                -25.76084
+              ],
+              [
+                28.21141,
+                -25.76086
+              ],
+              [
+                28.2109,
+                -25.76084
+              ],
+              [
+                28.20323,
+                -25.75981
+              ],
+              [
+                28.20265,
+                -25.75979
+              ],
+              [
+                28.20219,
+                -25.75982
+              ],
+              [
+                28.20168,
+                -25.75994
+              ],
+              [
+                28.20118,
+                -25.76014
+              ],
+              [
+                28.20079,
+                -25.76039
+              ],
+              [
+                28.19705,
+                -25.76338
+              ],
+              [
+                28.19664,
+                -25.76365
+              ],
+              [
+                28.19633,
+                -25.7638
+              ],
+              [
+                28.19605,
+                -25.76387
+              ],
+              [
+                28.19532,
+                -25.76392
+              ],
+              [
+                28.19466,
+                -25.76383
+              ],
+              [
+                28.19427,
+                -25.7637
+              ],
+              [
+                28.19386,
+                -25.7635
+              ],
+              [
+                28.19347,
+                -25.76321
+              ],
+              [
+                28.19272,
+                -25.76241
+              ],
+              [
+                28.18987,
+                -25.75873
+              ],
+              [
+                28.18987,
+                -25.75873
+              ],
+              [
+                28.19272,
+                -25.76241
+              ],
+              [
+                28.19293,
+                -25.76265
+              ],
+              [
+                28.19327,
+                -25.76318
+              ],
+              [
+                28.19347,
+                -25.76367
+              ],
+              [
+                28.19355,
+                -25.76411
+              ],
+              [
+                28.19353,
+                -25.76495
+              ],
+              [
+                28.19324,
+                -25.76732
+              ],
+              [
+                28.19298,
+                -25.76986
+              ],
+              [
+                28.19303,
+                -25.77287
+              ],
+              [
+                28.19295,
+                -25.77371
+              ],
+              [
+                28.19279,
+                -25.7747
+              ],
+              [
+                28.19145,
+                -25.77875
+              ],
+              [
+                28.19035,
+                -25.78153
+              ],
+              [
+                28.18925,
+                -25.7847
+              ],
+              [
+                28.18879,
+                -25.78593
+              ],
+              [
+                28.18844,
+                -25.78668
+              ],
+              [
+                28.18778,
+                -25.78773
+              ],
+              [
+                28.18718,
+                -25.78853
+              ],
+              [
+                28.18659,
+                -25.78915
+              ],
+              [
+                28.18586,
+                -25.78984
+              ],
+              [
+                28.18394,
+                -25.79131
+              ],
+              [
+                28.18296,
+                -25.7921
+              ],
+              [
+                28.18194,
+                -25.79317
+              ],
+              [
+                28.1816,
+                -25.7936
+              ],
+              [
+                28.18108,
+                -25.79435
+              ],
+              [
+                28.18066,
+                -25.79507
+              ],
+              [
+                28.18027,
+                -25.79596
+              ],
+              [
+                28.17992,
+                -25.79694
+              ],
+              [
+                28.17965,
+                -25.79818
+              ],
+              [
+                28.17957,
+                -25.79897
+              ],
+              [
+                28.17954,
+                -25.79991
+              ],
+              [
+                28.17985,
+                -25.81185
+              ],
+              [
+                28.17997,
+                -25.8156
+              ],
+              [
+                28.18001,
+                -25.81801
+              ],
+              [
+                28.18012,
+                -25.82042
+              ],
+              [
+                28.18034,
+                -25.82221
+              ],
+              [
+                28.18066,
+                -25.82353
+              ],
+              [
+                28.18085,
+                -25.82418
+              ],
+              [
+                28.18243,
+                -25.82868
+              ],
+              [
+                28.18273,
+                -25.82966
+              ],
+              [
+                28.18294,
+                -25.83051
+              ],
+              [
+                28.18394,
+                -25.83747
+              ],
+              [
+                28.1848,
+                -25.84297
+              ],
+              [
+                28.185,
+                -25.84384
+              ],
+              [
+                28.18522,
+                -25.84463
+              ],
+              [
+                28.18539,
+                -25.84517
+              ],
+              [
+                28.18576,
+                -25.84607
+              ],
+              [
+                28.18614,
+                -25.84686
+              ],
+              [
+                28.18648,
+                -25.84749
+              ],
+              [
+                28.18724,
+                -25.84867
+              ],
+              [
+                28.18951,
+                -25.85174
+              ]
+            ]
+          },
+          "fare": {
+            "description": "Peak",
+            "fareProduct": {
+              "id": "ermjGrmlykSGKGr3-GJaOQ",
+              "href": "https://platform.whereismytransport.com/api/fareproducts/ermjGrmlykSGKGr3-GJaOQ",
+              "name": "Pay-As-You-Go",
+              "description": "Pay-As-You-Go",
+              "restrictions": null,
+              "default": true,
+              "isDefault": true
+            },
+            "cost": {
+              "amount": 34,
+              "currencyCode": "ZAR"
+            },
+            "messages": [
+              "Transfer discount"
+            ],
+            "id": null,
+            "href": null
+          },
+          "directions": null,
+          "vehicle": {
+            "designation": "4 Car",
+            "direction": null,
+            "headsign": "Park"
+          },
+          "id": null,
+          "href": "https://platform.whereismytransport.com/api/journeys/mup7XV0550mC6qmHAOKJyg/itineraries/lxGY5ThceE-MQqmHAOKJ5g/legs/1"
+        }
+      ]
+    },
+    {
+      "id": "VLG0BqmKbkapVKmHAOKJ5g",
+      "href": "https://platform.whereismytransport.com/api/journeys/mup7XV0550mC6qmHAOKJyg/itineraries/VLG0BqmKbkapVKmHAOKJ5g",
+      "departureTime": "2018-10-28T15:26:20Z",
+      "arrivalTime": "2018-10-28T15:40:25Z",
+      "distance": {
+        "value": 16781,
+        "unit": "m"
+      },
+      "duration": 845,
+      "legs": [
+        {
+          "type": "Transit",
+          "distance": {
+            "value": 16781,
+            "unit": "m"
+          },
+          "duration": 845,
+          "line": {
+            "agency": {
+              "name": "Gautrain",
+              "culture": "en",
+              "description": null,
+              "id": "edObkk6o-0WN3tNZBLqKPg",
+              "href": "https://platform.whereismytransport.com/api/agencies/edObkk6o-0WN3tNZBLqKPg"
+            },
+            "name": "North - South Line",
+            "shortName": "North - South",
+            "description": null,
+            "mode": "Rail",
+            "colour": "#ffb12f23",
+            "textColour": "#ffffffff",
+            "id": "WxfgoY4h-kO-1qakAPt1iA",
+            "href": "https://platform.whereismytransport.com/api/lines/WxfgoY4h-kO-1qakAPt1iA"
+          },
+          "waypoints": [
+            {
+              "arrivalTime": "2018-10-28T15:26:20Z",
+              "departureTime": "2018-10-28T15:26:20Z",
+              "stop": {
+                "id": "L_FHO9WV5Eav-7TMOhzkxw",
+                "href": "https://platform.whereismytransport.com/api/stops/L_FHO9WV5Eav-7TMOhzkxw",
+                "agency": {
+                  "name": "Gautrain",
+                  "culture": "en",
+                  "description": null,
+                  "id": "edObkk6o-0WN3tNZBLqKPg",
+                  "href": "https://platform.whereismytransport.com/api/agencies/edObkk6o-0WN3tNZBLqKPg"
+                },
+                "name": "Hatfield",
+                "code": null,
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    28.23794,
+                    -25.74762
+                  ]
+                },
+                "modes": [
+                  "Rail"
+                ]
+              },
+              "location": null
+            },
+            {
+              "arrivalTime": "2018-10-28T15:32:25Z",
+              "departureTime": "2018-10-28T15:33:55Z",
+              "stop": {
+                "id": "kAhwIctp2kWQaemv8-UEJQ",
+                "href": "https://platform.whereismytransport.com/api/stops/kAhwIctp2kWQaemv8-UEJQ",
+                "agency": {
+                  "name": "Gautrain",
+                  "culture": "en",
+                  "description": null,
+                  "id": "edObkk6o-0WN3tNZBLqKPg",
+                  "href": "https://platform.whereismytransport.com/api/agencies/edObkk6o-0WN3tNZBLqKPg"
+                },
+                "name": "Pretoria",
+                "code": null,
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    28.18988,
+                    -25.75866
+                  ]
+                },
+                "modes": [
+                  "Rail"
+                ]
+              },
+              "location": null
+            },
+            {
+              "arrivalTime": "2018-10-28T15:40:25Z",
+              "departureTime": "2018-10-28T15:40:25Z",
+              "stop": {
+                "id": "EVqyiLEv9ke1HUtWTUDOCQ",
+                "href": "https://platform.whereismytransport.com/api/stops/EVqyiLEv9ke1HUtWTUDOCQ",
+                "agency": {
+                  "name": "Gautrain",
+                  "culture": "en",
+                  "description": null,
+                  "id": "edObkk6o-0WN3tNZBLqKPg",
+                  "href": "https://platform.whereismytransport.com/api/agencies/edObkk6o-0WN3tNZBLqKPg"
+                },
+                "name": "Centurion",
+                "code": null,
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    28.1897,
+                    -25.85161
+                  ]
+                },
+                "modes": [
+                  "Rail"
+                ]
+              },
+              "location": null
+            }
+          ],
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                28.23798,
+                -25.74773
+              ],
+              [
+                28.23652,
+                -25.74822
+              ],
+              [
+                28.23236,
+                -25.74973
+              ],
+              [
+                28.23022,
+                -25.75043
+              ],
+              [
+                28.22976,
+                -25.75065
+              ],
+              [
+                28.22938,
+                -25.7509
+              ],
+              [
+                28.22897,
+                -25.75122
+              ],
+              [
+                28.22828,
+                -25.75189
+              ],
+              [
+                28.22644,
+                -25.75393
+              ],
+              [
+                28.22177,
+                -25.75905
+              ],
+              [
+                28.22138,
+                -25.75939
+              ],
+              [
+                28.2209,
+                -25.75972
+              ],
+              [
+                28.22058,
+                -25.75986
+              ],
+              [
+                28.2198,
+                -25.76011
+              ],
+              [
+                28.21908,
+                -25.76023
+              ],
+              [
+                28.21865,
+                -25.76024
+              ],
+              [
+                28.21802,
+                -25.76019
+              ],
+              [
+                28.21541,
+                -25.75985
+              ],
+              [
+                28.21507,
+                -25.75984
+              ],
+              [
+                28.2147,
+                -25.75987
+              ],
+              [
+                28.21434,
+                -25.75995
+              ],
+              [
+                28.21398,
+                -25.76007
+              ],
+              [
+                28.21277,
+                -25.76056
+              ],
+              [
+                28.21226,
+                -25.76074
+              ],
+              [
+                28.21176,
+                -25.76084
+              ],
+              [
+                28.21141,
+                -25.76086
+              ],
+              [
+                28.2109,
+                -25.76084
+              ],
+              [
+                28.20323,
+                -25.75981
+              ],
+              [
+                28.20265,
+                -25.75979
+              ],
+              [
+                28.20219,
+                -25.75982
+              ],
+              [
+                28.20168,
+                -25.75994
+              ],
+              [
+                28.20118,
+                -25.76014
+              ],
+              [
+                28.20079,
+                -25.76039
+              ],
+              [
+                28.19705,
+                -25.76338
+              ],
+              [
+                28.19664,
+                -25.76365
+              ],
+              [
+                28.19633,
+                -25.7638
+              ],
+              [
+                28.19605,
+                -25.76387
+              ],
+              [
+                28.19532,
+                -25.76392
+              ],
+              [
+                28.19466,
+                -25.76383
+              ],
+              [
+                28.19427,
+                -25.7637
+              ],
+              [
+                28.19386,
+                -25.7635
+              ],
+              [
+                28.19347,
+                -25.76321
+              ],
+              [
+                28.19272,
+                -25.76241
+              ],
+              [
+                28.18987,
+                -25.75873
+              ],
+              [
+                28.18987,
+                -25.75873
+              ],
+              [
+                28.19272,
+                -25.76241
+              ],
+              [
+                28.19293,
+                -25.76265
+              ],
+              [
+                28.19327,
+                -25.76318
+              ],
+              [
+                28.19347,
+                -25.76367
+              ],
+              [
+                28.19355,
+                -25.76411
+              ],
+              [
+                28.19353,
+                -25.76495
+              ],
+              [
+                28.19324,
+                -25.76732
+              ],
+              [
+                28.19298,
+                -25.76986
+              ],
+              [
+                28.19303,
+                -25.77287
+              ],
+              [
+                28.19295,
+                -25.77371
+              ],
+              [
+                28.19279,
+                -25.7747
+              ],
+              [
+                28.19145,
+                -25.77875
+              ],
+              [
+                28.19035,
+                -25.78153
+              ],
+              [
+                28.18925,
+                -25.7847
+              ],
+              [
+                28.18879,
+                -25.78593
+              ],
+              [
+                28.18844,
+                -25.78668
+              ],
+              [
+                28.18778,
+                -25.78773
+              ],
+              [
+                28.18718,
+                -25.78853
+              ],
+              [
+                28.18659,
+                -25.78915
+              ],
+              [
+                28.18586,
+                -25.78984
+              ],
+              [
+                28.18394,
+                -25.79131
+              ],
+              [
+                28.18296,
+                -25.7921
+              ],
+              [
+                28.18194,
+                -25.79317
+              ],
+              [
+                28.1816,
+                -25.7936
+              ],
+              [
+                28.18108,
+                -25.79435
+              ],
+              [
+                28.18066,
+                -25.79507
+              ],
+              [
+                28.18027,
+                -25.79596
+              ],
+              [
+                28.17992,
+                -25.79694
+              ],
+              [
+                28.17965,
+                -25.79818
+              ],
+              [
+                28.17957,
+                -25.79897
+              ],
+              [
+                28.17954,
+                -25.79991
+              ],
+              [
+                28.17985,
+                -25.81185
+              ],
+              [
+                28.17997,
+                -25.8156
+              ],
+              [
+                28.18001,
+                -25.81801
+              ],
+              [
+                28.18012,
+                -25.82042
+              ],
+              [
+                28.18034,
+                -25.82221
+              ],
+              [
+                28.18066,
+                -25.82353
+              ],
+              [
+                28.18085,
+                -25.82418
+              ],
+              [
+                28.18243,
+                -25.82868
+              ],
+              [
+                28.18273,
+                -25.82966
+              ],
+              [
+                28.18294,
+                -25.83051
+              ],
+              [
+                28.18394,
+                -25.83747
+              ],
+              [
+                28.1848,
+                -25.84297
+              ],
+              [
+                28.185,
+                -25.84384
+              ],
+              [
+                28.18522,
+                -25.84463
+              ],
+              [
+                28.18539,
+                -25.84517
+              ],
+              [
+                28.18576,
+                -25.84607
+              ],
+              [
+                28.18614,
+                -25.84686
+              ],
+              [
+                28.18648,
+                -25.84749
+              ],
+              [
+                28.18724,
+                -25.84867
+              ],
+              [
+                28.18951,
+                -25.85174
+              ]
+            ]
+          },
+          "fare": {
+            "description": "Peak",
+            "fareProduct": {
+              "id": "ermjGrmlykSGKGr3-GJaOQ",
+              "href": "https://platform.whereismytransport.com/api/fareproducts/ermjGrmlykSGKGr3-GJaOQ",
+              "name": "Pay-As-You-Go",
+              "description": "Pay-As-You-Go",
+              "restrictions": null,
+              "default": true,
+              "isDefault": true
+            },
+            "cost": {
+              "amount": 34,
+              "currencyCode": "ZAR"
+            },
+            "messages": [
+              "Transfer discount"
+            ],
+            "id": null,
+            "href": null
+          },
+          "directions": null,
+          "vehicle": {
+            "designation": "4 Car",
+            "direction": null,
+            "headsign": "Park"
+          },
+          "id": null,
+          "href": "https://platform.whereismytransport.com/api/journeys/mup7XV0550mC6qmHAOKJyg/itineraries/VLG0BqmKbkapVKmHAOKJ5g/legs/1"
+        }
+      ]
+    },
+    {
+      "id": "QT5_BG387k61x6mHAOKJ5g",
+      "href": "https://platform.whereismytransport.com/api/journeys/mup7XV0550mC6qmHAOKJyg/itineraries/QT5_BG387k61x6mHAOKJ5g",
+      "departureTime": "2018-10-28T15:56:20Z",
+      "arrivalTime": "2018-10-28T16:10:25Z",
+      "distance": {
+        "value": 16781,
+        "unit": "m"
+      },
+      "duration": 845,
+      "legs": [
+        {
+          "type": "Transit",
+          "distance": {
+            "value": 16781,
+            "unit": "m"
+          },
+          "duration": 845,
+          "line": {
+            "agency": {
+              "name": "Gautrain",
+              "culture": "en",
+              "description": null,
+              "id": "edObkk6o-0WN3tNZBLqKPg",
+              "href": "https://platform.whereismytransport.com/api/agencies/edObkk6o-0WN3tNZBLqKPg"
+            },
+            "name": "North - South Line",
+            "shortName": "North - South",
+            "description": null,
+            "mode": "Rail",
+            "colour": "#ffb12f23",
+            "textColour": "#ffffffff",
+            "id": "WxfgoY4h-kO-1qakAPt1iA",
+            "href": "https://platform.whereismytransport.com/api/lines/WxfgoY4h-kO-1qakAPt1iA"
+          },
+          "waypoints": [
+            {
+              "arrivalTime": "2018-10-28T15:56:20Z",
+              "departureTime": "2018-10-28T15:56:20Z",
+              "stop": {
+                "id": "L_FHO9WV5Eav-7TMOhzkxw",
+                "href": "https://platform.whereismytransport.com/api/stops/L_FHO9WV5Eav-7TMOhzkxw",
+                "agency": {
+                  "name": "Gautrain",
+                  "culture": "en",
+                  "description": null,
+                  "id": "edObkk6o-0WN3tNZBLqKPg",
+                  "href": "https://platform.whereismytransport.com/api/agencies/edObkk6o-0WN3tNZBLqKPg"
+                },
+                "name": "Hatfield",
+                "code": null,
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    28.23794,
+                    -25.74762
+                  ]
+                },
+                "modes": [
+                  "Rail"
+                ]
+              },
+              "location": null
+            },
+            {
+              "arrivalTime": "2018-10-28T16:02:25Z",
+              "departureTime": "2018-10-28T16:03:55Z",
+              "stop": {
+                "id": "kAhwIctp2kWQaemv8-UEJQ",
+                "href": "https://platform.whereismytransport.com/api/stops/kAhwIctp2kWQaemv8-UEJQ",
+                "agency": {
+                  "name": "Gautrain",
+                  "culture": "en",
+                  "description": null,
+                  "id": "edObkk6o-0WN3tNZBLqKPg",
+                  "href": "https://platform.whereismytransport.com/api/agencies/edObkk6o-0WN3tNZBLqKPg"
+                },
+                "name": "Pretoria",
+                "code": null,
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    28.18988,
+                    -25.75866
+                  ]
+                },
+                "modes": [
+                  "Rail"
+                ]
+              },
+              "location": null
+            },
+            {
+              "arrivalTime": "2018-10-28T16:10:25Z",
+              "departureTime": "2018-10-28T16:10:25Z",
+              "stop": {
+                "id": "EVqyiLEv9ke1HUtWTUDOCQ",
+                "href": "https://platform.whereismytransport.com/api/stops/EVqyiLEv9ke1HUtWTUDOCQ",
+                "agency": {
+                  "name": "Gautrain",
+                  "culture": "en",
+                  "description": null,
+                  "id": "edObkk6o-0WN3tNZBLqKPg",
+                  "href": "https://platform.whereismytransport.com/api/agencies/edObkk6o-0WN3tNZBLqKPg"
+                },
+                "name": "Centurion",
+                "code": null,
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    28.1897,
+                    -25.85161
+                  ]
+                },
+                "modes": [
+                  "Rail"
+                ]
+              },
+              "location": null
+            }
+          ],
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                28.23798,
+                -25.74773
+              ],
+              [
+                28.23652,
+                -25.74822
+              ],
+              [
+                28.23236,
+                -25.74973
+              ],
+              [
+                28.23022,
+                -25.75043
+              ],
+              [
+                28.22976,
+                -25.75065
+              ],
+              [
+                28.22938,
+                -25.7509
+              ],
+              [
+                28.22897,
+                -25.75122
+              ],
+              [
+                28.22828,
+                -25.75189
+              ],
+              [
+                28.22644,
+                -25.75393
+              ],
+              [
+                28.22177,
+                -25.75905
+              ],
+              [
+                28.22138,
+                -25.75939
+              ],
+              [
+                28.2209,
+                -25.75972
+              ],
+              [
+                28.22058,
+                -25.75986
+              ],
+              [
+                28.2198,
+                -25.76011
+              ],
+              [
+                28.21908,
+                -25.76023
+              ],
+              [
+                28.21865,
+                -25.76024
+              ],
+              [
+                28.21802,
+                -25.76019
+              ],
+              [
+                28.21541,
+                -25.75985
+              ],
+              [
+                28.21507,
+                -25.75984
+              ],
+              [
+                28.2147,
+                -25.75987
+              ],
+              [
+                28.21434,
+                -25.75995
+              ],
+              [
+                28.21398,
+                -25.76007
+              ],
+              [
+                28.21277,
+                -25.76056
+              ],
+              [
+                28.21226,
+                -25.76074
+              ],
+              [
+                28.21176,
+                -25.76084
+              ],
+              [
+                28.21141,
+                -25.76086
+              ],
+              [
+                28.2109,
+                -25.76084
+              ],
+              [
+                28.20323,
+                -25.75981
+              ],
+              [
+                28.20265,
+                -25.75979
+              ],
+              [
+                28.20219,
+                -25.75982
+              ],
+              [
+                28.20168,
+                -25.75994
+              ],
+              [
+                28.20118,
+                -25.76014
+              ],
+              [
+                28.20079,
+                -25.76039
+              ],
+              [
+                28.19705,
+                -25.76338
+              ],
+              [
+                28.19664,
+                -25.76365
+              ],
+              [
+                28.19633,
+                -25.7638
+              ],
+              [
+                28.19605,
+                -25.76387
+              ],
+              [
+                28.19532,
+                -25.76392
+              ],
+              [
+                28.19466,
+                -25.76383
+              ],
+              [
+                28.19427,
+                -25.7637
+              ],
+              [
+                28.19386,
+                -25.7635
+              ],
+              [
+                28.19347,
+                -25.76321
+              ],
+              [
+                28.19272,
+                -25.76241
+              ],
+              [
+                28.18987,
+                -25.75873
+              ],
+              [
+                28.18987,
+                -25.75873
+              ],
+              [
+                28.19272,
+                -25.76241
+              ],
+              [
+                28.19293,
+                -25.76265
+              ],
+              [
+                28.19327,
+                -25.76318
+              ],
+              [
+                28.19347,
+                -25.76367
+              ],
+              [
+                28.19355,
+                -25.76411
+              ],
+              [
+                28.19353,
+                -25.76495
+              ],
+              [
+                28.19324,
+                -25.76732
+              ],
+              [
+                28.19298,
+                -25.76986
+              ],
+              [
+                28.19303,
+                -25.77287
+              ],
+              [
+                28.19295,
+                -25.77371
+              ],
+              [
+                28.19279,
+                -25.7747
+              ],
+              [
+                28.19145,
+                -25.77875
+              ],
+              [
+                28.19035,
+                -25.78153
+              ],
+              [
+                28.18925,
+                -25.7847
+              ],
+              [
+                28.18879,
+                -25.78593
+              ],
+              [
+                28.18844,
+                -25.78668
+              ],
+              [
+                28.18778,
+                -25.78773
+              ],
+              [
+                28.18718,
+                -25.78853
+              ],
+              [
+                28.18659,
+                -25.78915
+              ],
+              [
+                28.18586,
+                -25.78984
+              ],
+              [
+                28.18394,
+                -25.79131
+              ],
+              [
+                28.18296,
+                -25.7921
+              ],
+              [
+                28.18194,
+                -25.79317
+              ],
+              [
+                28.1816,
+                -25.7936
+              ],
+              [
+                28.18108,
+                -25.79435
+              ],
+              [
+                28.18066,
+                -25.79507
+              ],
+              [
+                28.18027,
+                -25.79596
+              ],
+              [
+                28.17992,
+                -25.79694
+              ],
+              [
+                28.17965,
+                -25.79818
+              ],
+              [
+                28.17957,
+                -25.79897
+              ],
+              [
+                28.17954,
+                -25.79991
+              ],
+              [
+                28.17985,
+                -25.81185
+              ],
+              [
+                28.17997,
+                -25.8156
+              ],
+              [
+                28.18001,
+                -25.81801
+              ],
+              [
+                28.18012,
+                -25.82042
+              ],
+              [
+                28.18034,
+                -25.82221
+              ],
+              [
+                28.18066,
+                -25.82353
+              ],
+              [
+                28.18085,
+                -25.82418
+              ],
+              [
+                28.18243,
+                -25.82868
+              ],
+              [
+                28.18273,
+                -25.82966
+              ],
+              [
+                28.18294,
+                -25.83051
+              ],
+              [
+                28.18394,
+                -25.83747
+              ],
+              [
+                28.1848,
+                -25.84297
+              ],
+              [
+                28.185,
+                -25.84384
+              ],
+              [
+                28.18522,
+                -25.84463
+              ],
+              [
+                28.18539,
+                -25.84517
+              ],
+              [
+                28.18576,
+                -25.84607
+              ],
+              [
+                28.18614,
+                -25.84686
+              ],
+              [
+                28.18648,
+                -25.84749
+              ],
+              [
+                28.18724,
+                -25.84867
+              ],
+              [
+                28.18951,
+                -25.85174
+              ]
+            ]
+          },
+          "fare": {
+            "description": "Peak",
+            "fareProduct": {
+              "id": "ermjGrmlykSGKGr3-GJaOQ",
+              "href": "https://platform.whereismytransport.com/api/fareproducts/ermjGrmlykSGKGr3-GJaOQ",
+              "name": "Pay-As-You-Go",
+              "description": "Pay-As-You-Go",
+              "restrictions": null,
+              "default": true,
+              "isDefault": true
+            },
+            "cost": {
+              "amount": 34,
+              "currencyCode": "ZAR"
+            },
+            "messages": [
+              "Transfer discount"
+            ],
+            "id": null,
+            "href": null
+          },
+          "directions": null,
+          "vehicle": {
+            "designation": "4 Car",
+            "direction": null,
+            "headsign": "Park"
+          },
+          "id": null,
+          "href": "https://platform.whereismytransport.com/api/journeys/mup7XV0550mC6qmHAOKJyg/itineraries/QT5_BG387k61x6mHAOKJ5g/legs/1"
+        }
+      ]
+    }
+  ],
+  "earliestDepartureTime": null,
+  "modes": null,
+  "agencies": null,
+  "oneDayParkingCost": 22,
+  "profile": "ClosestToTime",
+  "time": "2018-10-28T13:44:00Z",
+  "timeType": "DepartAfter",
+  "id": "mup7XV0550mC6qmHAOKJyg",
+  "href": "https://platform.whereismytransport.com/api/journeys/mup7XV0550mC6qmHAOKJyg"
+}

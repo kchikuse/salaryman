@@ -1,36 +1,34 @@
 package bot
 
-import bot.utilities.*
 import bot.models.*
 import bot.services.*
 import org.telegram.telegrambots.api.methods.send.SendMessage
 
 import static org.joda.time.DateTimeUtils.*
 
-class DevotionalSpec extends Spec {
+class WorshipSpec extends Spec {
 
     ChikuseBot bot
 
-    Storage storage
+    Settings settings
 
-    Devotional devotional
+    Worship devotional
 
     def setup(){
         bot = Mock(ChikuseBot.class)
-        storage = Stub(Storage.class)
-        storage.allChatUsers >> [
-                new Chat(id: 1, chatId: 111),
-                new Chat(id: 2, chatId: 222) ]
+        settings = Stub(Settings.class)
+        settings.allChatUsers >> [
+                new Chat(id: 1, chatId: 111, userId: 1),
+                new Chat(id: 2, chatId: 222, userId: 2) ]
 
         setCurrentMillisFixed(1517911200000) //February 6, 2018
     }
 
     def 'Sends the devotional to the correct people'() {
         given:
-        devotional = new Devotional(
-                browser: new Browser(),
-                strawsUrl: prop('bot.url.small.straws'),
-                storage: storage,
+        devotional = new Worship(
+                url: prop('bot.url.small.straws'),
+                settings: settings,
                 bot: bot
         )
 

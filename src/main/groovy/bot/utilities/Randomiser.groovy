@@ -1,19 +1,19 @@
 package bot.utilities
 
-import org.springframework.stereotype.Service
+import org.springframework.stereotype.Component
 
 import java.util.concurrent.ThreadLocalRandom
 
-@Service
+@Component
 class Randomiser {
 
-    int integer(int size = 1) {
-        return ThreadLocalRandom.current().nextInt(size)
+    int getRandomInteger(int max = 1) {
+        return ThreadLocalRandom.current().nextInt(max)
     }
 
-    def item(List<?> items) {
-        Collections.shuffle(items)
-        int index = integer(items.size())
-        return items[ index ]
+    def getRandomElement(List<?> elements) {
+        Collections.shuffle(elements)
+        int index = getRandomInteger(elements.size())
+        return elements[ index ]
     }
 }

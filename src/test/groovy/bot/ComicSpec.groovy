@@ -1,23 +1,19 @@
 package bot
 
-import bot.utilities.Browser
-import bot.models.Strip
+import bot.models.Photo
 import bot.services.*
 
-class CommitStripSpec extends Spec {
+class ComicSpec extends Spec {
 
-    CommitStrip commit
+    Comic commit
 
     def setup() {
-        commit = new CommitStrip(
-                browser: new Browser(),
-                url: prop('bot.url.commitstrip')
-        )
+        commit = new Comic(url: prop('bot.url.commitstrip'))
     }
 
     def 'Get the correct data from the commitstrip website'() {
         when:
-        Strip strip = commit.strip
+        Photo strip = commit.strip
 
         then:
         strip.contentUrl == null

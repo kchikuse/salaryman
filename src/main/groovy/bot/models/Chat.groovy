@@ -12,4 +12,6 @@ class Chat {
     long id
 
     long chatId
+
+    long userId
 }

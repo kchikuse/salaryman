@@ -1,6 +1,6 @@
 package bot.models
 
-class Strip {
+class Photo {
     String caption
     String imageUrl
     String contentUrl

@@ -1,6 +1,5 @@
 package bot
 
-import bot.utilities.*
 import bot.services.*
 
 class GoogleSpec extends Spec {
@@ -9,7 +8,6 @@ class GoogleSpec extends Spec {
 
     def setup() {
         google = new Google(
-                browser: new Browser(),
                 toRandsUrl: prop('bot.url.dollars.to.rands'),
                 toDollarsUrl: prop('bot.url.rands.to.dollars')
         )

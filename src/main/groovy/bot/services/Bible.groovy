@@ -1,39 +1,37 @@
 package bot.services
 
-import bot.utilities.*
 import bot.models.*
 import org.jsoup.nodes.Document
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
-import javax.inject.Inject
+
+import static bot.utilities.Browser.*
 
 @Service
 class Bible {
 
-    @Inject
-    private Browser browser
-
     @Value('${bot.url.bible}')
-    private String bibleUrl
+    private String url
 
-    String getRandomVerse() {
-        Document doc = browser.getHTML(bibleUrl)
-        String text =  doc.select(".bibleVerse").first().ownText()
+    String getVerse() {
+        Document doc = getHTML(url)
+        String text = doc.select(".bibleVerse").first().ownText()
         String verse = doc.select(".bibleChapter a").first().text()
         return String.format("%s - *%s*", text, verse)
     }
 
-    List<Food> checkFood(String food) {
+    List<Food> searchForFoods(String food) {
+
         def foods = []
 
-        for(String f : cleanFoods) {
-            if(match(f, food)) {
+        for (String f : cleanFoods) {
+            if (match(f, food)) {
                 foods.add(new Food(name: f, clean: true))
             }
         }
 
-        for(String f : dirtyFoods) {
-            if(match(f, food)) {
+        for (String f : dirtyFoods) {
+            if (match(f, food)) {
                 foods.add(new Food(name: f, clean: false))
             }
         }
@@ -41,16 +39,11 @@ class Bible {
         return foods
     }
 
-    static String format(List<Food> foods) {
-        return foods.collect {
-            "${it.name} is *${it.clean ? 'CLEAN' : 'UNCLEAN'}*"  }.join("\n")
-    }
+    private static boolean match(String foodName, String searchTerm) {
+        def words = foodName.toUpperCase().split(" ")
 
-    private static boolean match(String food, String phrase) {
-        def words = food.toUpperCase().split(" ")
-
-        for(String word in words) {
-            if(phrase.equalsIgnoreCase(word)) {
+        for (String word in words) {
+            if (searchTerm.equalsIgnoreCase(word)) {
                 return true
             }
         }
@@ -58,7 +51,7 @@ class Bible {
         return false
     }
 
-    private final List<String> cleanFoods = [
+    private def cleanFoods = [
             'Cricket',
             'Grasshopper',
             'Katydid',
@@ -271,7 +264,7 @@ class Bible {
             'Turkey'
     ]
 
-    private final List<String> dirtyFoods = [
+    private def dirtyFoods = [
             'Pig',
             'Butterfly',
             'Ambush Bug',
@@ -491,6 +484,7 @@ class Bible {
             'Mule',
             'Onager',
             'Zebra',
+            'Madora',
             'Mopane worm',
             'Earthworm',
             'Shrew',
@@ -536,8 +530,11 @@ class Bible {
             'Ferret',
             'Mouse',
             'Stoat',
+            'Vampire',
             'Wallaby',
             'Weasel',
+            'Werewolf',
+            'Dragon',
             'Wolverine'
     ]
 }

@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+    <title>Gautrain | For people on the move</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <meta name="description" content="Gautrain::Web" />
+    <meta name="author" content="AfriGIS (Pty) Ltd" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link href="/webjars/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/map.css" />
+    <link rel="stylesheet" href="/css/tables.css" />
+    <link rel="stylesheet" href="/css/meganavbar.css" />
+    <link rel="stylesheet" href="/css/business-frontpage.css" />
+    <link rel="stylesheet" href="/css/gautrain.css?caching=9daed88a9070962445d2d568dafb6df9cf6c2afd" />
+    <link rel="stylesheet" href="/css/sticky-footer.css" />
+    <link rel="stylesheet" href="/css/datepicker.css" />
+    <link rel="stylesheet" href="/css/dataTables.bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/afrigis.mvc.sidebar.css" />
+    <link rel="stylesheet" href="/css/jquery-eu-cookie-law-popup.css" />
+    <link rel="stylesheet" href="/css/typeahead.css" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <!-- <link rel="stylesheet" type="text/css"
+          href="http://www.bootstrap-switch.org/dist/css/bootstrap3/bootstrap-switch.css"/>
+           -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+
+    <script src="/webjars/crupu/0.0.3/src/crupu.js">
+    </script>
+
+</head>
+<body>
+
+<html lang="en" role="main">
+<head>
+</head>
+<body>
+<div id="dvBusyState" style="background: rgba(157, 139, 87, .7); position: absolute; top: 0; left: 0; height: 0px; width: 100%; z-index: 99999; display: none">
+		<span style="position: fixed; top: 30%; left: 50%; width: 460px; height: 60px; margin-left: -230px; margin-top: -10px">
+			<center>
+				<h4 style="color: white">
+					<span id="dvBusyStateMessage">Loading trip ...</span>
+				</h4>
+				<img src="/img/Loading.gif" width="460" height="40" />
+			</center>
+		</span>
+</div>
+<form action="/logout" method="post" name="logoutFrm" id="logoutFrm"><input type="hidden" name="_csrf" value="0a345be8-cd55-4968-a6df-017fec2c6d00" /></form>
+<form method="post" id="frmNearest" action="/nearest">
+    <input type="hidden" id="inputNearest" name="inputNearest" value="" />
+    <input type="hidden" name="_csrf" value="0a345be8-cd55-4968-a6df-017fec2c6d00" /></form>
+<form method="post" id="frmMapRoutes" action="/routes">
+    <input type="hidden" id="routes" name="routes" value="true" />
+    <input type="hidden" name="_csrf" value="0a345be8-cd55-4968-a6df-017fec2c6d00" /></form>
+
+<!-- Navigation -->
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container" style="padding-left: 0px; margin-left: 0px;">
+        <div class="navbar-header eupopup eupopup-fixedtop">
+            <a href="/" class="" style=""> <img src="/img/Gautrain_logo_spacer.png" width="250" height="50" alt="Gautrain" />
+            </a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div class="navbar-collapse collapse" id="navbar-main" style="border-top: initial; padding-left: 15px; margin-right: -100px; padding-right: 60px;">
+            <ul class="nav navbar-nav navbar-left">
+
+                <li class="dropdown-wide TheMainMenu  hidden-xs hidden-sm" id="theMainMenu"><a data-toggle="dropdown" href="javascript:;" class="dropdown-toggle hidden-sm hidden-xs" id="oneclickmenu"><i class="fa fa-th"></i>Menu <span class="glyphicon glyphicon-chevron-down"></span></a>
+                    <div class="dropdown-menu" id="oneclickmenuSM" style="background: white; padding-left: 0px; padding-top: 0px; padding-right: 0px; margin-right: 35px;">
+                        <div class="triangle-isosceles-menu hidden-xs" style="left: 260px; bottom: 325px; z-index: 500;"></div>
+                        <div style="background: #F0F1F2;">
+                            <div class="col-xs-12" style="background: #F0F1F2; padding-left: 10px; padding-top: 10px; padding-right: 0px; padding-bottom: 10px; color: #B3B3B3">
+									<span style="color: #004990; font-weight: bold;">For
+										people on the move </span>Plan your trip, view schedules, fares and
+                                bus information and even reload your card. Everything right
+                                here.
+                            </div>
+
+                        </div>
+                        <hr />
+
+                        <div class="show-grid col-md-6 col-xs-12">
+                            <br />
+                            <div class="col-xs-12 hidden-xs">
+                                <img height="37" width="37" src="/img/OneClick_H_info.png" />
+                            </div>
+                            <div class="col-xs-12">
+                                <h3 style="font-size: 22px;">Commuter Info</h3>
+                            </div>
+                            <div class="col-xs-6">
+
+                                <div class="col-xs-12">
+                                    <a id="mi0Plan" href="/" style="color: #4D4D4D; font-size: 12px;">Plan trip</a>
+                                </div>
+                                <div class="greyline col-xs-12"></div>
+                                <div class="col-xs-12">
+                                    <a id="mi0Status" href="/commuter/linestatus" style="color: #4D4D4D; font-size: 12px;">System status</a>
+                                </div>
+                                <div class="greyline col-xs-12"></div>
+                                <div class="col-xs-12">
+                                    <a id="mi3Travel" href="/commuter/whentotravel" style="color: #4D4D4D; font-size: 12px;">When to travel</a>
+                                </div>
+                                <div class="greyline col-xs-12"></div>
+                                <div class="col-xs-12 CloseTheMainMenu">
+                                    <a id="mi0Station" href="#" style="color: #4D4D4D; font-size: 12px;">Find nearest
+                                        station</a>
+                                </div>
+                                <div class="greyline col-xs-12"></div>
+                                <div class="col-xs-12 CloseTheMainMenu">
+                                    <a id="mi0Bus" href="#" style="color: #4D4D4D; font-size: 12px;">Find nearest bus</a>
+                                </div>
+                                <div class="greyline col-xs-12"></div>
+
+                                <div></div>
+                                <div class="col-xs-12 CloseTheMainMenu">
+                                    <a id="mi0Map" href="#" style="color: #4D4D4D; font-size: 12px;">Route Map</a>
+                                </div>
+                                <div class="greyline col-xs-12"></div>
+
+                                <div class="col-xs-12">
+                                    <a id="mi4Purchase" href="/commuter/purchasegautraincard" style="color: #4D4D4D; font-size: 12px;">Purchasing a
+                                        Gautrain Card</a>
+                                </div>
+                                <div class="greyline col-xs-12"></div>
+                                <div class="col-xs-12">
+                                    <a id="mi0Timetable" style="color: #4D4D4D; font-size: 12px;" href="/commuter/timetables">Schedule</a>
+                                </div>
+                                <div class="greyline col-xs-12"></div>
+                                <div class="col-xs-12">
+                                    <a id="miFares" href="/commuter/farecalc" style="color: #4D4D4D; font-size: 12px;">Fares</a>
+                                </div>
+
+                                <div class="greyline col-xs-12"></div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div></div>
+
+                                <div class="col-xs-12">
+                                    <a id="mi1Timetable" style="color: #4D4D4D; font-size: 12px;" href="/commuter/trainhowtouse">How to
+                                        use the Train</a>
+                                </div>
+
+                                <div class="greyline col-xs-12"></div>
+                                <div class="col-xs-12">
+                                    <a id="mi2Timetable" style="color: #4D4D4D; font-size: 12px;" href="/commuter/parkinghowtouse">How to
+                                        use the Parking</a>
+                                </div>
+
+                                <div class="greyline col-xs-12"></div>
+                                <div class="dropdown-right-onhover col-xs-12">
+                                    <!-- Menu item with submenu -->
+                                    <a class="dropdown-toggle" data-target="#id_3ac0aa8ea29f230222" data-toggle="collapse" href="javascript:;"><i class="fa fa-bars"></i><span style="color: #4D4D4D; font-size: 12px;">Bus
+												information&nbsp;</span><span class="glyphicon glyphicon-chevron-down"></span><span class="desc"></span></a>
+                                    <!-- start submenu -->
+                                    <div id="id_3ac0aa8ea29f230222" class="dropdown-menu collapse" style="height: 32px; background: #F0F1F2; border: thin; border-color: #CCCCCC">
+                                        <div class="dropdown-header" style="font-weight: bold; font-family: Arial; color: #004990; font-size: 14px;">Bus
+                                            Information</div>
+                                        <div class="col-xs-12">
+                                            <a id="mi2Station" href="/commuter/bushowtouse" style="color: #4D4D4D; font-size: 12px;">How
+                                                to use the Bus Service</a>
+                                        </div>
+                                        <div class="greyline col-xs-12"></div>
+                                        <div class="col-xs-12">
+                                            <a id="mi2Use" href="/commuter/busroutedownloads" style="color: #4D4D4D; font-size: 12px;">Bus
+                                                route Downloads</a>
+                                        </div>
+                                        <div class="greyline col-xs-12"></div>
+                                    </div>
+                                    <!-- end submenu -->
+                                </div>
+                                <div class="greyline col-xs-12"></div>
+                                <div class="col-xs-12">
+                                    <a id="mi2Rules" href="/commuter/generalinformation?tab=3" style="color: #4D4D4D; font-size: 12px;">Travel rules</a>
+                                </div>
+                                <div class="greyline col-xs-12"></div>
+                                <div class="col-xs-12">
+                                    <a id="mi2Disable" href="/commuter/generalinformation?tab=2" style="color: #4D4D4D; font-size: 12px;">Passengers with
+                                        disabilities</a>
+                                </div>
+                                <div class="greyline col-xs-12"></div>
+
+                                <div class="col-xs-12">
+                                    <a class="aboutGautrain" href="/aboutgautrain" style="color: #4D4D4D; font-size: 12px;">About Gautrain</a>
+                                </div>
+
+                                <div class="greyline col-xs-12"></div>
+                                <div class="col-xs-12">
+                                    <a id="mi2FAQ" href="/commuter/generalinformation?tab=5" style="color: #4D4D4D; font-size: 12px;">FAQ's</a>
+                                </div>
+
+                                <!--contactus -->
+                                <div class="greyline col-xs-12"></div>
+                                <div class="col-xs-12">
+                                    <a id="mi2Contact" href="/contactus" style="color: #4D4D4D; font-size: 12px;">Contact Us</a>
+                                </div>
+
+                                <!--terms and conditions-->
+                                <div class="greyline col-xs-12"></div>
+                                <div class="col-xs-12">
+                                    <a id="mi2Terms" href="/termsconditions" style="color: #4D4D4D; font-size: 12px;">Terms and
+                                        Conditions</a>
+                                </div>
+                                <div class="greyline col-xs-12"></div>
+
+                            </div>
+                        </div>
+
+                        <div class="show-grid col-md-3 col-xs-12" style="display: none;">
+                            <br />
+                            <div class="col-xs-12 hidden-xs">
+                                <img height="37" width="37" src="/img/OneClick_H_NewsEvents.png" />
+                            </div>
+                            <div class="col-xs-12" style="color: #4D4D4D; font-size: 12px;">
+                                <h3 style="font-size: 22px;">News &amp; Events</h3>
+                            </div>
+                            <div class="col-xs-12">
+                                <a id="mi3Portal" href="#" style="color: #4D4D4D; font-size: 12px;">Lifestyle portal</a>
+                            </div>
+                            <div class="greyline col-xs-12"></div>
+                        </div>
+
+                        <div class="show-grid col-md-4 col-xs-12">
+                            <br />
+                            <div class="col-xs-12 hidden-xs">
+                                <img height="37" width="37" src="/img/OneClick_H_Reload.png" />
+                            </div>
+                            <div class="col-xs-12">
+                                <h3 style="font-size: 22px;">Reload card</h3>
+                            </div>
+                            <div class="col-xs-12">
+                                <a id="mi4Basket" href="/account/mycart" style="color: #4D4D4D; font-size: 12px;">My Cart (<span>0</span>)
+                                </a>
+                            </div>
+                            <div class="greyline col-xs-12"></div>
+                            <div class="col-xs-12">
+                                <a id="mi4BulkOrder" href="/account/goldcard/order" style="color: #4D4D4D; font-size: 12px;">Order
+                                    Gautrain Cards in bulk</a>
+                            </div>
+                            <div class="greyline col-xs-12"></div>
+                            <div class="col-xs-12">
+                                <h3 style="font-size: 22px;">Promotions</h3>
+                            </div>
+                            <div class="col-xs-12">
+                                <h3 style="font-size: 22px;">Surveys</h3>
+                            </div>
+                            <div>
+                                <div class="col-xs-12">
+                                    <a href="https://survey123.arcgis.com/share/b9cdf26fc13a47c090e405b6eedc1e3c" target="_blank" style="color: #4D4D4D; font-size: 12px;">Bus
+                                        Service Demand Survey</a>
+                                </div>
+                                <div class="greyline col-xs-12"></div>
+                            </div>
+                        </div>
+                    </div></li>
+                <div class="hidden-lg smallMenu hidden-md" style="background: white;">
+                    <div style="">
+                        <br />
+                        <li class="col-xs-12" style="color: #4D4D4D; font-size: 12px;"><h3>Account</h3></li>
+                        <li>
+                        <li class="col-xs-12"><a id="mi5Signin" href="/login" style="color: #4D4D4D; font-size: 12px;">Sign
+                            in</a></li>
+                        <li class="greyline col-xs-12"></li>
+                        </li>
+
+                        <li>
+                        <li class="col-xs-12"><a id="mi5Register" href="/register" style="color: #4D4D4D; font-size: 12px;">Register</a></li>
+                        <li class="greyline col-xs-12"></li>
+                        </li>
+
+                        <li class="col-xs-12"><a id="mi5CardManagement" href="/account/management" style="color: #4D4D4De; font-size: 12px;">Card management</a></li>
+                        <li class="greyline col-xs-12"></li>
+                        <li class="col-xs-12"><a id="mi4Claim" href="/account/claims" style="color: #4D4D4D; font-size: 12px;">Claim management</a></li>
+                        <li class="greyline col-xs-12"></li>
+                        <br />
+                        <li class="col-xs-12"><h3 style="font-size: 22px;">Commuter
+                            Info</h3></li>
+
+
+                        <li class="col-xs-12"><a id="mi0PlanSM" href="/" style="color: #4D4D4D; font-size: 12px;">Plan trip</a></li>
+                        <li class="greyline col-xs-12"></li>
+                        <li class="col-xs-12"><a id="mi0StatusSM" href="/commuter/linestatus" style="color: #4D4D4D; font-size: 12px;">System status</a></li>
+                        <li class="greyline col-xs-12"></li>
+                        <li class="col-xs-12"><a id="mi3TravelSM" href="/commuter/whentotravel" style="color: #4D4D4D; font-size: 12px;">When to travel</a></li>
+                        <li class="greyline col-xs-12"></li>
+                        <li class="col-xs-12 CloseTheMainMenu"><a id="ft0Station" href="#" style="color: #4D4D4D; font-size: 12px;">Find
+                            nearest station</a></li>
+                        <li class="greyline col-xs-12"></li>
+                        <li class="col-xs-12 CloseTheMainMenu"><a id="ft0Bus" href="#" style="color: #4D4D4D; font-size: 12px;">Find
+                            nearest bus</a></li>
+                        <li class="greyline col-xs-12"></li>
+
+                        <li></li>
+                        <li class="col-xs-12"><a id="ft0Map" href="#" style="color: #4D4D4D; font-size: 12px;">Route Map</a></li>
+                        <li class="greyline col-xs-12"></li>
+
+                        <li class="col-xs-12"><a id="mi4PurchaseSM" href="/account/purchasegautraincard" style="color: #4D4D4D; font-size: 12px;">Purchasing a
+                            Gautrain Card</a></li>
+                        <li class="greyline col-xs-12"></li>
+                        <li class="col-xs-12"><a id="mi0TimetableSM" style="color: #4D4D4D; font-size: 12px;" href="/commuter/timetables">Schedule</a></li>
+                        <li class="greyline col-xs-12"></li>
+                        <li class="col-xs-12"><a id="mi2Fares" href="/commuter/farecalc" style="color: #4D4D4D; font-size: 12px;">Fares</a></li>
+                        <li class="greyline col-xs-12"></li>
+
+
+                        <li></li>
+
+                        <li class="col-xs-12"><a id="mi1TimetableSM" style="color: #4D4D4D; font-size: 12px;" href="/commuter/trainhowtouse">How to use
+                            the Train</a></li>
+
+                        <li class="greyline col-xs-12"></li>
+                        <li class="col-xs-12"><a id="mi2TimetableSM" style="color: #4D4D4D; font-size: 12px;" href="/commuter/parkinghowtouse">How to use
+                            the Parking</a></li>
+
+                        <li class="greyline col-xs-12"></li>
+                        <li class="dropdown-header" style="font-weight: bold; font-family: Arial; color: #004990; font-size: 14px;">Bus
+                            Information</li>
+                        <li class="col-xs-12"><a id="mi2StationSM" href="/commuter/bushowtouse" style="color: #4D4D4D; font-size: 12px;">How to use the Bus
+                            Service</a></li>
+                        <li class="greyline col-xs-12"></li>
+                        <li class="col-xs-12"><a id="mi2UseSM" href="/commuter/busroutedownloads" style="color: #4D4D4D; font-size: 12px;">Bus route Downloads</a></li>
+                        <li class="greyline col-xs-12"></li>
+
+                        <li class="greyline col-xs-12"></li>
+                        <li class="col-xs-12"><a id="mi2RulesSM" href="/commuter/generalinformation?tab=3" style="color: #4D4D4D; font-size: 12px;">Travel rules</a></li>
+                        <li class="greyline col-xs-12"></li>
+                        <li class="col-xs-12"><a id="mi2DisableSM" href="/commuter/generalinformation?tab=2" style="color: #4D4D4D; font-size: 12px;">Passengers with
+                            disabilities</a></li>
+                        <li class="greyline col-xs-12"></li>
+
+                        <li class="col-xs-12"><a class="aboutGautrain" href="/aboutgautrain" style="color: #4D4D4D; font-size: 12px;">About Gautrain</a></li>
+                        <li class="greyline col-xs-12"></li>
+                        <li class="col-xs-12"><a id="mi2FAQSM" href="/commuter/generalinformation?tab=5" style="color: #4D4D4D; font-size: 12px;">FAQ's</a></li>
+                        <li class="greyline col-xs-12"></li>
+                        <li class="col-xs-12"><a id="mi2ContactSM" href="/contactus" style="color: #4D4D4D; font-size: 12px;">Contact Us</a></li>
+                        <li class="greyline col-xs-12"></li>
+                        <li class="col-xs-12"><a id="mi2TermsSM" href="/termsconditions" style="color: #4D4D4D; font-size: 12px;">Terms and
+                            Conditions</a></li>
+                        <li class="greyline col-xs-12"></li> <br />
+                        <li class="col-xs-12" style="color: #4D4D4D; font-size: 12px; display: none;"><h3 style="font-size: 22px;">News &amp; Events</h3></li>
+                        <li class="col-xs-12" style="display: none;"><a id="mi3PortalSM" href="#" style="color: #4D4D4D; font-size: 12px;">Lifestyle portal</a></li>
+                        <li class="greyline col-xs-12" style="display: none;"></li> <br style="display: none;" />
+                        <li class="col-xs-12"><h3 style="font-size: 22px;">Reload
+                            card</h3></li>
+                        <li class="col-xs-12"><a id="mi4BasketSM" href="/account/mycart" style="color: #4D4D4D; font-size: 12px;">My Cart (<span>0</span>)
+                        </a></li>
+                        <li class="greyline col-xs-12"></li>
+                        <li class="col-xs-12"><a id="mi4BulkOrderSM" href="/account/goldcard/order" style="color: #4D4D4D; font-size: 12px;">Order Gautrain
+                            Cards in bulk</a></li>
+                        <li></li>
+                        <li class="col-xs-12"></li>
+                        <li class="greyline col-xs-12"></li>
+
+
+                        <li class="col-xs-12"><h3 style="font-size: 22px;">Promotions</h3></li>
+                        <li class="greyline col-xs-12"></li>
+                        <li></li>
+                        <li class="col-xs-12"><h3 style="font-size: 22px;">Surveys</h3></li>
+                        <li class="col-xs-12"><a href="https://survey123.arcgis.com/share/b9cdf26fc13a47c090e405b6eedc1e3c" target="_blank" style="color: #4D4D4D; font-size: 12px;">Bus
+                            Service Demand Survey</a></li>
+                        <li class="greyline col-xs-12"></li>
+                        <li></li>
+                    </div>
+                </div>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right hidden-xs hidden-sm">
+
+
+
+                <li class="hidden-sm hidden-xs"><a> <span> <img src="/img/Top_Time.png" width="15" height="15" alt="Time" data-toggle="tooltip" data-placement="bottom" data-original-title="Current Time" />
+						</span> <span id="siteTime" style="margin-top: 8px; height: 15px;" class="hidden-md"> --:--</span>
+                </a></li>
+                <li class="dropdown"><a class="dropdown-toggle" href="/account/mycart" id="mi4"> <img src="/img/Account_MyCart_22.png" width="20" height="20" alt="My Cart" /> <span class="cartCircle">0</span>
+                </a></li>
+
+
+                <li class="dropdown hidden-sm hidden-xs"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" id="mi5" aria-expanded="false"> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Account">Account
+						</span> <span class="glyphicon glyphicon-chevron-down"></span>
+                </a>
+                    <ul class="dropdown-menu" role="menu" style="padding: 15px; width: 200%;">
+                        <span></span>
+
+                        <span class="col-xs-12"><img height="30" width="30" src="/img/OneClick_H_Account.png" /></span>
+                        <span class="col-xs-12" style="color: #4D4D4D; font-size: 12px;"><h3>Account</h3></span>
+                        <div>
+                            <span class="col-xs-12"><a id="mi5SigninSM" href="/login" style="color: #4D4D4D; font-size: 12px;">Sign in</a></span>
+                            <div class="greyline col-xs-12"></div>
+                        </div>
+
+                        <div>
+                            <span class="col-xs-12"><a id="mi5RegisterSM" href="/register" style="color: #4D4D4D; font-size: 12px;">Register</a></span>
+                            <div class="greyline col-xs-12"></div>
+                        </div>
+
+                        <span class="col-xs-12"><a id="mi5CardManagementSM" href="/account/management" style="color: #4D4D4D; font-size: 12px;">Card management</a></span>
+                        <div class="greyline col-xs-12"></div>
+                        <span class="col-xs-12"><a id="mi4ClaimSM" href="/account/claims" style="color: #4D4D4D; font-size: 12px;">Claim management</a></span>
+                        <div class="greyline col-xs-12"></div>
+
+                        <!-- li><a id="mi5Basket" href="#">My Cart (<span  th:text="${(basketInfo == null) ? '0' : basketInfo.count}">2</span>)</a></li>
+                        <li class="divider"></li //-->
+                    </ul></li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+<!-- /.Navigation -->
+<!-- Note: The background image is set within the business-casual.css file. -->
+<!-- Page Content -->
+<div class="greyline">&nbsp;</div>
+
+
+<!-- news ticker demo -->
+
+<div class="tickercontainer">
+    <div class="mask">
+        <ul id="ticker02" class="newsticker" style="width: 3072px;">
+
+        </ul>
+    </div>
+</div>
+
+<!-- /news ticker demo -->
+<!-- Account holder's name ONLY ON LG -->
+<div class="Acc-box hidden-sm hidden-md hidden-xs">
+		<span class="Acc-ico"> <img src="/img/Top_Account_name.png" width="15" height="15" alt="Account" />
+		</span>
+</div>
+<!-- ./Account holder's name -->
+<div class="modal fade" id="feedbackLogModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Report Problem</h4>
+            </div>
+            <div class="modal-body">
+                <div id="reportSubjDiv" class="form-group">
+                    <label for="subject" class="col-form-label">Subject:</label> <input id="fbLogSubject" name="fbLogSubject" type="text" class="form-control" />
+                </div>
+                <div id="fbLogMsgDiv" class="form-group">
+                    <label for="message-text" class="col-form-label">Message:</label>
+                    <textarea id="fbLogMsg" name="fbLogMsg" style="resize: vertical;" class="form-control"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button id="reportBtn" type="button" class="btn btn-primary" onclick="submitReport();">Submit</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="feedbackModalConfirm" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Report Problem</h4>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-info">
+                    <div>Thank you, we received your report.</div>
+                    <div>
+                        <span>Your reference : </span>
+                        <strong><span id="fbModalConfirmRef"></span></strong>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script type="text/javascript" src="/js/web/openVideoOnLoad.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.bootstrap-datetimepicker-widget').on('click', function(event) {
+            $(this).parent().toggleClass('open');
+        });
+    });
+</script>
+<div class="container-fluid">
+    <div class="row">
+        <div class="pagetopspace"></div>
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+            <h1 class="capitalize" id="nav-tabs">Sign in</h1>
+            <div class="bs-component">
+                <form class="form-horizontal" action="/login" method="post">
+                    <div>
+
+
+
+
+                    </div>
+                    <fieldset>
+                        <div class="form-group">
+                            <label for="inputUsername" class="col-lg-4 col-md-4 control-label MedTableHeadBlue">Email
+                                address</label>
+                            <div class="col-md-8  col-lg-8">
+                                <input type="text" class="form-control" id="inputUsername" name="username" placeholder="Email address" AUTOCOMPLETE="off" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword" class="col-lg-4 col-md-4 control-label MedTableHeadBlue">Password</label>
+                            <div class="col-lg-8 col-md-8">
+                                <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password" AUTOCOMPLETE="off" />
+                                <div class="checkbox"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="control-label col-lg-4 col-md-4">
+                                <a class="blueline" href="/register">Register</a>
+                            </div>
+                            <div class="control-label col-lg-8 col-md-8">
+                                <a class="blueline" href="/forgotpassword">Forgot
+                                    password?</a>
+                            </div>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <div class="col-xs-12 ">
+                                <div class="row">
+                                    <div class="col-sm-5"></div>
+                                    <div class="col-md-4 col-sm-12 col-xs-12">
+                                        <button type="submit" id="btnSubmit" class="btn btn-primary btn-sm btn-block">Sign in</button>
+                                    </div>
+                                    <div class="col-sm-3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <input type="hidden" name="_csrf" value="0a345be8-cd55-4968-a6df-017fec2c6d00" /></form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pagetopspace"></div>
+<footer class="navbar-fixed-bottom footerSticky">
+    <!-- Footer Text links for LG and MD -->
+
+    <div class="col-md-3 hidden-sm hidden-xs">
+        Copyright&nbsp;&copy;&nbsp;Gautrain <span class="crupu-year">2016</span>
+    </div>
+
+    <div class="col-md-9 hidden-sm hidden-xs footlinks">
+        <a class="white" href="/termsconditions" id="lnkFooterTerms" target="_self">Terms &amp; conditions</a> | <a class="white" href="/contactus" id="lnkFooterContact" target="_self">Contact Us</a>
+    </div>
+</footer><footer class="navbar-fixed-bottom footerStickyXs hidden-lg hidden-md">
+    <div class="col-md-3 hidden-sm hidden-xs">
+        Copyright&nbsp;&copy;&nbsp;Gautrain <span class="crupu-year">2016</span>
+    </div>
+
+    <!-- Footer icon links for SM and XS -->
+
+    <center class="col-xs-3 hidden-lg hidden-md col-xs-3">
+        <a href="/account/management">
+            <div class="footiconreload"></div> <a id="btnFtrReload" style="font-size: xx-small; white-space: nowrap; color: white; margin-left: 3px" href="/account/management">Reload</a>
+        </a>
+    </center>
+
+    <center class="col-xs-3 hidden-lg hidden-md col-xs-3">
+        <a href="#settings" target="_self" data-toggle="collapse" id="ST">
+            <div class="footiconsettings"></div> <span style="font-size: xx-small; white-space: nowrap; color: white; margin: auto;">Settings</span>
+        </a>
+    </center>
+
+    <center class="col-xs-3 hidden-lg hidden-md col-xs-3">
+        <a href="#when" target="_self" data-toggle="collapse" id="btnTimeTables">
+            <div class="footiconstime"></div> <span style="font-size: xx-small; white-space: nowrap; color: white; margin: auto;">Schedules</span>
+        </a>
+    </center>
+
+    <center class="col-xs-3 hidden-lg hidden-md col-xs-3" id="btnViewRouteF">
+        <a href="#itineraries" data-toggle="collapse" target="_self" id="btnViewRoute">
+            <div class="footicontrip"></div> <span style="font-size: xx-small; white-space: nowrap; color: white; margin: auto;">Trip
+					details</span>
+        </a>
+    </center>
+
+    <!-- jQuery -->
+
+    <script src="/webjars/jquery/2.1.1/jquery.min.js"></script>
+
+    <script src="/js/web/afrigis.typeaheadhelper.js?caching=9daed88a9070962445d2d568dafb6df9cf6c2afd"></script>
+    <script src="/js/web/typeahead.bundle.js"></script>
+
+    <script src="/js/moment.js"></script>
+
+    <script type="text/javascript" src="/webjars/bootstrap/3.3.6/js/transition.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/3.3.6/js/collapse.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- News Ticker -->
+    <script src="/js/jquery.li-scroller.1.0.js"></script>
+
+    <script type="text/javascript" src="/js/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript" src="/js/dataTables.bootstrap.min.js"></script>
+
+    <!-- Date Picker -->
+    <script src="/js/bootstrap-datetimepicker.js"></script>
+
+    <!-- Validator -->
+    <script src="/js/validator.js"></script>
+
+    <!-- Account profile -->
+
+
+    <!-- Server time -->
+    <script src="/js/web/servertime.js"></script>
+
+
+
+    <script src="/js/afrigis.mvc.sidebar.js"></script>
+
+    <script src="/js/map.js"></script>
+
+    <script src="/js/web/account.product.purchase.menu.link.js"></script>
+
+    <script src="/js/jquery.easyPaginate/lib/jquery.easyPaginate.js"></script>
+
+    <script src="/js/web/jquery-eu-cookie-law-popup.js"></script>
+
+    <script type="text/javascript">
+        // See https://datatables.net/reference/event/error
+        $.fn.dataTable.ext.errMode = 'none';
+    </script>
+    <script src="/js/web/feedback.js"></script>
+    <script type="text/javascript">
+        var tokenProvider = null;
+        function formatGoldCardNr(str) {
+            if (str === null || str === '' || str === 'undefined') {
+                return 'Unknown';
+            }
+            var result = str;
+            if (str.length > 0) {
+                if (str.length > 12)
+                    result = str.substring(str.length - 4);
+                if (str.length > 8)
+                    result = str.substring(str.length - 8, str.length - 4)
+                        + ' ' + result;
+                if (str.length > 4)
+                    result = str.substring(str.length - 12, str.length - 8)
+                        + ' ' + result;
+                if (str.length > 0)
+                    result = str
+                            .substring(str.length - 16, str.length - 12)
+                        + ' ' + result;
+                if (str.length > 16)
+                    result = str.substring(0, str.length - 16) + ' '
+                        + result;
+            }
+            return result;
+        }
+        //<![CDATA[
+        $(function() {
+            $("ul#ticker02").liScroll({
+                travelocity : 0.05
+                //the speed of scrolling
+            });
+        });
+
+        $(document).ready(
+            function() {
+                tokenProvider = new AfriGIS.TokenProvider(
+                    "/commuter/token", "/commuter/getnewtoken");
+
+                $('#mi0Station').click(function() {
+                    var url = '/map';
+                    $("#pagecontent").load(url);
+                    getNearestType('Rail');
+                });
+                $('#mi0Bus').click(function() {
+                    var url = '/map';
+                    $("#pagecontent").load(url);
+                    getNearestType('Bus');
+                });
+                $('#mi0Map').click(function() {
+                    if ($("#btnOrgNearestStation").length) {
+                        var url = '/map';
+                        $("#pagecontent").load(url);
+                    } else {
+                        $('#frmMapRoutes').submit();
+                    }
+                });
+
+                $('#mi0Map2').click(function() {
+                    if ($("#btnOrgNearestStation").length) {
+                        var url = '/map';
+                        $("#pagecontent").load(url);
+                    } else {
+                        $('#frmMapRoutes').submit();
+                    }
+                });
+
+                $('#ft0Station').click(function() {
+                    nearest = 'Rail';
+                    if ($("#btnOrgNearestStation").length) {
+                        var url = '/map';
+                        $("#pagecontent").load(url);
+                    } else {
+                        $('#inputNearest').val(nearest);
+                        $('#frmNearest').submit();
+                    }
+                });
+                $('#ft0Bus').click(function() {
+                    nearest = 'Bus';
+                    if ($("#btnOrgNearestStation").length) {
+                        var url = '/map';
+                        $("#pagecontent").load(url);
+                    } else {
+                        $('#inputNearest').val(nearest);
+                        $('#frmNearest').submit();
+                    }
+                });
+                $('#ft0Map').click(function() {
+                    if ($("#btnOrgNearestStation").length) {
+                        var url = '/map';
+                        $("#pagecontent").load(url);
+                    } else {
+                        $('#frmMapRoutes').submit();
+                    }
+                });
+
+                $('.datepicker').datetimepicker({
+                    viewMode : 'years',
+                    format : 'DD-MM-YYYY'
+                }).on('changeDate', function(ev) {
+                    if (ev.viewMode === 'days') {
+                        $('.datepicker').hide();
+                    }
+                });
+
+            });
+
+        //]]>
+    </script>
+    <script async="async" type="text/javascript" src="//analytics.afrigis.co.za/piwik.js"></script>
+    <script type="text/javascript">
+        //<![CDATA[
+        var _paq = _paq || [];
+        _paq.push([ "setCookieDomain", "*.gautrain.co.za" ]);
+        _paq.push([ "setDomains", [ "*.gautrain.co.za" ] ]);
+        _paq.push([ 'trackPageView' ]);
+        _paq.push([ 'enableLinkTracking' ]);
+        (function() {
+            var u = "//analytics.afrigis.co.za/";
+            _paq.push([ 'setTrackerUrl', u + 'piwik.php' ]);
+            _paq.push([ 'setSiteId', '35' ]);
+            var d = document, g = d.createElement('script'), s = d
+                .getElementsByTagName('script')[0];
+            g.type = 'text/javascript';
+            g.async = true;
+            g.defer = true;
+            g.src = u + 'piwik.js';
+            s.parentNode.insertBefore(g, s);
+        })();
+        //]]>
+    </script>
+    <!-- End Piwik Code -->
+
+
+    <script async="async" type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-16745541-18"></script>
+    <script type="text/javascript">
+        //<![CDATA[
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-16745541-18');
+        //]]>
+    </script>
+
+
+    <!-- Hotjar Tracking Code for https://www.gautrain.co.za -->
+
+    <script>
+        (function(h, o, t, j, a, r) {
+            h.hj = h.hj || function() {
+                    (h.hj.q = h.hj.q || []).push(arguments)
+                };
+            h._hjSettings = {
+                hjid : 750898,
+                hjsv : 6
+            };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script');
+            r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-',
+            '.js?sv=');
+    </script>
+
+    <script src="/js/menu.js"></script>
+    <script src="/js/web/nearest.js"></script>
+    <script src="/js/web/account.profile.js"></script>
+    <script src="/js/web/searchILS.js"></script>
+    <form id="submitPurchaseProduct" method="post" style="display: none" action="/">
+        <input type="text" name="id" id="id" value="" />
+        <input type="hidden" name="_csrf" value="0a345be8-cd55-4968-a6df-017fec2c6d00" /></form>
+
+</footer>
+</body>
+</html>

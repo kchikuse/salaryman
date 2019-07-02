@@ -1,6 +1,5 @@
 package bot
 
-import bot.utilities.*
 import bot.services.*
 
 class BibleSpec extends Spec {
@@ -8,15 +7,12 @@ class BibleSpec extends Spec {
     Bible bible
 
     def setup() {
-        bible = new Bible(
-                browser: new Browser(),
-                bibleUrl: prop('bot.url.bible')
-        )
+        bible = new Bible(url: prop('bot.url.bible'))
     }
 
     def 'Gets the correct random verse'() {
         when:
-        String verse = bible.randomVerse
+        String verse = bible.getVerse()
 
         then:
         verse == 'Today in the town of David a Savior has been born to you; he is the Messiah, the Lord. - *Luke 2:11*'
@@ -24,29 +20,42 @@ class BibleSpec extends Spec {
 
     def "lamb is clean"() {
         when: "i search for lamb"
-        def foods = bible.checkFood("lamb")
+        def foods = bible.searchForFoods("lamb")
 
-        then: "1 clean food is returned"
+        then: "one clean food is returned"
         foods.findAll { it.clean }.size() == 1
 
         and: "no unclean foods are returned"
         foods.findAll { ! it.clean }.isEmpty()
     }
 
-    def "lamb is clean - works with any case"() {
+    def "lamb is clean - case insensitivity"() {
         when: "i search for lamb"
-        def foods = bible.checkFood("laMB")
+        def foods = bible.searchForFoods("laMB")
 
-        then: "1 clean food is returned"
+        then: "one clean food is returned"
         foods.findAll { it.clean }.size() == 1
 
         and: "no unclean foods are returned"
         foods.findAll { ! it.clean }.isEmpty()
+    }
+
+    def "raven is unclean"() {
+        when: "i search for Raven"
+        def foods = bible.searchForFoods("Raven")
+
+        then: "no clean foods are returned"
+        foods.findAll { it.clean }.isEmpty()
+
+        and: "1 unclean foods are returned"
+        def unclean = foods.findAll { ! it.clean }
+        unclean.size() == 1
+        unclean[0].name == "Raven"
     }
 
     def "pork is unclean"() {
         when: "i search for pork"
-        def foods = bible.checkFood("pork")
+        def foods = bible.searchForFoods("pork")
 
         then: "no clean foods are returned"
         foods.findAll { it.clean }.isEmpty()
@@ -58,11 +67,11 @@ class BibleSpec extends Spec {
         unclean[1].name == "Pork sausage"
     }
 
-    def "pig"() {
+    def "multiple results"() {
         when: "i search for pig"
-        def foods = bible.checkFood("pig")
+        def foods = bible.searchForFoods("pig")
 
-        then: "1 clean food is returned"
+        then: "one clean food is returned"
         def clean = foods.findAll { it.clean }
         clean.size() == 1
         clean[0].name == "Pig Fish"
@@ -77,7 +86,7 @@ class BibleSpec extends Spec {
 
     def "food is not known"() {
         when: "the food is not in our list"
-        def foods = bible.checkFood("whooperscooper")
+        def foods = bible.searchForFoods("whooperscooper")
 
         then: "nothing is returned"
         foods.isEmpty()
@@ -85,10 +94,10 @@ class BibleSpec extends Spec {
 
     def "markdown formatting"() {
         given: "a list of foods"
-        def foods = bible.checkFood("pig")
+        def foods = bible.searchForFoods("pig")
 
         when: "they are formatted into a string"
-        String markdown = bible.format(foods)
+        String markdown = foods.collect { it.toString() }.join("\n")
 
         then: "the string is correct markdown"
         markdown == "Pig Fish is *CLEAN*\nPig is *UNCLEAN*\nGuinea Pig is *UNCLEAN*\nPig Lard is *UNCLEAN*"
