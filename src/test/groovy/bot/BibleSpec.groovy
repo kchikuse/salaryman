@@ -79,8 +79,8 @@ class BibleSpec extends Spec {
         and: "3 unclean foods are returned"
         def unclean = foods.findAll { ! it.clean }
         unclean.size() == 3
-        unclean[0].name == "Pig"
-        unclean[1].name == "Guinea Pig"
+        unclean[0].name == "Guinea Pig"
+        unclean[1].name == "Pig"
         unclean[2].name == "Pig Lard"
     }
 
@@ -100,6 +100,6 @@ class BibleSpec extends Spec {
         String markdown = foods.collect { it.toString() }.join("\n")
 
         then: "the string is correct markdown"
-        markdown == "Pig Fish is *CLEAN*\nPig is *UNCLEAN*\nGuinea Pig is *UNCLEAN*\nPig Lard is *UNCLEAN*"
+        markdown == "Pig Fish is *CLEAN*\nGuinea Pig is *UNCLEAN*\nPig is *UNCLEAN*\nPig Lard is *UNCLEAN*"
     }
 }
