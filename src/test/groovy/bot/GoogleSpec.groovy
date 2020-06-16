@@ -15,11 +15,11 @@ class GoogleSpec extends Spec {
 
     def 'Correctly convert rands to dollars'() {
         expect:
-        google.changeRandsToDollars('R') == 'R1 = *0,084 US Dollars*'
+        google.changeRandsToDollars('R') == 'R1 = *0,058 US Dollars*'
     }
 
     def 'Correctly convert dollars to rands'() {
         expect:
-        google.changeDollarsToRands('$') == '$1 = *11,95 Rands*'
+        google.changeDollarsToRands('$') == '$1 = *17,20 Rands*'
     }
 }

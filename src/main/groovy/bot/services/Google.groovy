@@ -29,7 +29,7 @@ class Google {
 
     private static String convert(String url, String amount) {
         return Browser.getHTML(format(url, amount))
-                .select("#knowledge-currency__tgt-amount")
+                .select("span[data-value]")
                 .first()
                 .text()
     }
