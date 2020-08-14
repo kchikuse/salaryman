@@ -60,19 +60,10 @@ class Quotable {
         }
     }
 
-    Photo getRandomFact() {
+    String getRandomFact() {
         Document doc = getHTML(factsUrl)
-        Elements facts = doc.select(".fact")
-        Element fact = random.getRandomElement(facts) as Element
-        Element link = fact.select(".box a").first()
-        Element img = fact.select("figure img").first()
-        Element caption = fact.select(".fact_text").first()
-        String imgUrl = img ? img.absUrl("src") : "http://pipsum.com/285x152.jpg"
-        return new Photo(
-                imageUrl: imgUrl,
-                caption: caption.text(),
-                contentUrl: link.absUrl("href")
-        )
+        Element fact = doc.select(".randomfact_fact").first()
+        return fact.text()
     }
 
     String getRandomAdvice() {

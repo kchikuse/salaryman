@@ -1,13 +1,9 @@
-FROM anapsix/alpine-java
+FROM adoptopenjdk/openjdk8-openj9
 
 MAINTAINER kchikuse
 
 EXPOSE 80
 
-VOLUME /tmp
-
 ADD /maven/bot-*.war bot.war
 
-RUN sh -c 'touch /bot.war'
-
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/bot.war"]
+ENTRYPOINT ["java","-jar","/bot.war"]

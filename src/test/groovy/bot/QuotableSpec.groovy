@@ -28,26 +28,10 @@ class QuotableSpec extends Spec {
         seedRandomiser(0, 4)
 
         when:
-        Photo fact = quotable.getRandom() as Photo
+        String fact = quotable.getRandom()
 
         then:
-        fact.contentUrl == "https://funfactz.com/law-and-crime-facts/mikerowesoft/"
-        fact.imageUrl == "https://funfactz.com/res/uploads/fact/3518/mikerowesoft-285.jpg"
-        fact.caption == "Microsoft once sued a student named Mike Rowe for registering the domain 'MikeRoweSoft.com'."
-    }
-
-
-    def 'Get the correct random fact without a photo'() {
-        given:
-        seedRandomiser(0, 5)
-
-        when:
-        Photo fact = quotable.getRandom() as Photo
-
-        then:
-        fact.contentUrl == "https://funfactz.com/language-facts/the-words-racecar-kayak-and-level-are-the/"
-        fact.imageUrl == "http://pipsum.com/285x152.jpg"
-        fact.caption == "The words ‘racecar,’ ‘kayak’ and ‘level’ are the same whether they are read left to right or right to left (palindromes)."
+        fact == "Children laugh about 400 times a day, while adults laugh on average only 15 times a day."
     }
 
 
